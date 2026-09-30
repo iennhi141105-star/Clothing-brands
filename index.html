@@ -1,436 +1,1071 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta name="google-site-verification" content="BLv1Z8i32uHFH-6caFXvwHD2ns7RwN3ZefwoIyhT4r0" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
   <meta name="description"
-        content="LUMEN ATELIER – Thời trang nam nữ thanh lịch và hiện đại.">
-  <title>LUMEN ATELIER | Thời trang nam nữ</title>
+        content="Khám phá thời trang nam nữ LUMEN ATELIER: áo sơ mi, blazer, denim và phụ kiện cho phong cách thanh lịch hiện đại.">
+  <title>LUMEN ATELIER | Thời trang nam nữ hiện đại</title>
 
   <style>
     :root {
-      --dark: #111111;
-      --gold: #a78326;
+      --dark: #111;
+      --gold: #99731f;
       --cream: #f9f8f6;
-      --gray: #656565;
-      --line: #e5e5e5;
+      --gray: #626262;
+      --line: #e4e4e4;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      color: var(--dark);
       background: white;
-      font: 16px/1.6 Arial, sans-serif;
+      color: var(--dark);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
-    button, input, select, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { cursor: pointer; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; object-fit: cover; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.2; }
-    h1, h2, .serif { font-family: Georgia, serif; }
-    section[id] { scroll-margin-top: 100px; }
-    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    /* Dùng cùng một font cho tất cả thành phần */
+    h1, h2, h3, h4, h5, h6,
+    p, a, span, strong, em,
+    button, input, select, textarea, label {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    .container { width: min(1240px, 92%); margin: auto; }
-    .section { padding: 80px 0; }
-    .cream { background: var(--cream); }
-    .muted { color: var(--gray); }
+    h1, h2, h3, h4 {
+      line-height: 1.35;
+      letter-spacing: normal;
+      margin-top: 0;
+    }
+
+    button, input, select, textarea {
+      font-size: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    section[id] {
+      scroll-margin-top: 95px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .container {
+      width: min(1240px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .cream {
+      background: var(--cream);
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
     .eyebrow {
       display: block;
       color: var(--gold);
       font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-weight: 700;
       margin-bottom: 12px;
     }
 
-    .section-heading { text-align: center; margin-bottom: 40px; }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
     .section-heading h2 {
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(28px, 4vw, 40px);
       margin-bottom: 14px;
     }
-    .section-heading p { max-width: 660px; margin: auto; color: var(--gray); }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--gray);
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       border: 1px solid var(--dark);
+      padding: 12px 23px;
+      border-radius: 28px;
       background: var(--dark);
       color: white;
-      border-radius: 30px;
-      padding: 12px 23px;
-      font-weight: bold;
-      transition: background .2s, transform .2s;
+      font-weight: 700;
+      line-height: 1.5;
+      transition: background .2s;
     }
-    .btn:hover { background: #333; transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: var(--dark); }
-    .btn-outline:hover { color: white; }
-    .btn-white { background: white; border-color: white; color: var(--dark); }
-    .btn-white:hover { background: #e8e8e8; }
-    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
-    .icon-btn {
+
+    .btn:hover {
+      background: #333;
+    }
+
+    .btn-outline {
       background: transparent;
-      border: 0;
-      color: inherit;
-      padding: 9px;
-      font-size: 22px;
-      line-height: 1;
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-white {
+      background: white;
+      border-color: white;
+      color: var(--dark);
+    }
+
+    .btn-white:hover {
+      background: #eee;
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .wide {
+      width: 100%;
     }
 
     /* Header */
     .announcement {
+      padding: 9px 15px;
       background: var(--dark);
       color: white;
-      padding: 10px 15px;
       text-align: center;
       font-size: 14px;
     }
-    .announcement strong { color: #e4c778; }
+
+    .announcement strong {
+      color: #e3c77c;
+    }
+
     header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: rgba(255,255,255,.97);
+      z-index: 20;
+      background: #fff;
       border-bottom: 1px solid var(--line);
     }
+
     .header-inner {
       min-height: 85px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 15px;
     }
-    .logo { display: flex; flex-direction: column; text-align: center; }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      line-height: 1.3;
+    }
+
     .logo strong {
-      font: bold 28px Georgia, serif;
-      letter-spacing: 5px;
+      font-size: 27px;
+      letter-spacing: 4px;
     }
-    .logo span { font-size: 12px; letter-spacing: 4px; }
-    .nav { display: flex; align-items: center; gap: 23px; }
-    .nav a { font-size: 14px; font-weight: bold; }
-    .nav a:hover { color: var(--gold); }
-    .nav .sale-link { color: #b62828; }
-    .header-actions { display: flex; align-items: center; gap: 5px; }
+
+    .logo span {
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--gold);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .action-btn {
+      border: 0;
+      background: transparent;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
     .count {
       display: inline-block;
       background: var(--dark);
       color: white;
-      font-size: 12px;
       border-radius: 20px;
-      padding: 4px 6px;
-      vertical-align: top;
+      padding: 1px 7px;
+      font-size: 12px;
     }
-    .menu-btn { display: none; }
+
+    .menu-btn {
+      display: none;
+    }
 
     /* Hero */
     .hero {
-      min-height: 630px;
       position: relative;
-      background: #252525;
+      min-height: 590px;
       display: grid;
       place-items: center;
+      background: #222;
       color: white;
-      text-align: center;
       overflow: hidden;
+      text-align: center;
     }
-    .hero-image { position: absolute; inset: 0; height: 100%; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: #0009; }
-    .hero-content { position: relative; z-index: 1; max-width: 850px; padding: 70px 20px; }
-    .hero .eyebrow { color: #e4c778; }
-    .hero h1 { font-size: clamp(36px, 6vw, 68px); margin: 18px 0 25px; }
-    .hero h1 em { font-weight: normal; }
-    .hero p { color: #eee; max-width: 640px; margin: 0 auto 30px; }
-    .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .hero .btn-outline { border-color: white; color: white; }
-    .hero .btn-outline:hover { background: white; color: var(--dark); }
 
-    /* Categories */
-    .categories { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .hero > img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #0009;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      padding: 65px 20px;
+    }
+
+    .hero .eyebrow {
+      color: #e3c77c;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 5.5vw, 62px);
+      margin: 15px 0 24px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 30px;
+      color: #eee;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero .btn-outline {
+      color: white;
+      border-color: white;
+    }
+
+    .hero .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* Danh mục */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
     .category {
       position: relative;
-      height: 310px;
-      border: 0;
-      background: #ddd;
-      border-radius: 16px;
+      height: 300px;
       overflow: hidden;
+      border: 0;
+      border-radius: 14px;
       padding: 0;
-      text-align: left;
+      background: #ddd;
     }
-    .category img { height: 100%; transition: transform .4s; }
-    .category:hover img { transform: scale(1.05); }
+
+    .category img {
+      height: 100%;
+      transition: transform .3s;
+    }
+
+    .category:hover img {
+      transform: scale(1.04);
+    }
+
     .category::after {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(transparent, #000b);
     }
+
     .category span {
       position: absolute;
-      left: 24px;
-      bottom: 24px;
-      color: white;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
       z-index: 1;
-      font: bold 25px Georgia, serif;
+      color: white;
+      font-size: 23px;
+      font-weight: 700;
+      text-align: left;
     }
 
-    /* Products */
+    /* Sản phẩm */
     .catalog-tools {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      gap: 15px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
-    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .filter {
-      border: 1px solid var(--line);
       background: white;
-      padding: 9px 18px;
+      border: 1px solid var(--line);
       border-radius: 25px;
+      padding: 9px 17px;
       font-size: 14px;
     }
-    .filter.active { background: var(--dark); color: white; border-color: var(--dark); }
-    .catalog-inputs { display: flex; gap: 10px; flex-wrap: wrap; }
-    .catalog-inputs input, .catalog-inputs select {
-      min-height: 45px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 10px 12px;
-      background: white;
-      max-width: 100%;
-    }
-    .catalog-inputs input { width: 210px; }
-    .product-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
-    .product-card { min-width: 0; }
-    .product-photo {
-      position: relative;
-      height: 330px;
-      background: #eee;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .product-photo img { height: 100%; transition: transform .35s; }
-    .product-photo:hover img { transform: scale(1.04); }
-    .product-image-btn { width: 100%; height: 100%; border: 0; padding: 0; background: none; }
-    .tag {
-      position: absolute;
-      left: 12px;
-      top: 12px;
+
+    .filter.active {
       background: var(--dark);
       color: white;
+      border-color: var(--dark);
+    }
+
+    .search-sort {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-sort input,
+    .search-sort select {
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 8px;
+      padding: 10px 12px;
+      min-height: 44px;
+      max-width: 100%;
+    }
+
+    .search-sort input {
+      width: 205px;
+    }
+
+    .catalog-note {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      min-width: 0;
+    }
+
+    .product-photo {
+      height: 320px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #eee;
+    }
+
+    .image-btn {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      background: none;
+    }
+
+    .product-photo img {
+      height: 100%;
+      transition: transform .3s;
+    }
+
+    .product-photo:hover img {
+      transform: scale(1.04);
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--dark);
+      color: white;
+      padding: 4px 9px;
       border-radius: 20px;
-      padding: 4px 10px;
       font-size: 12px;
       pointer-events: none;
     }
+
     .heart {
       position: absolute;
-      right: 12px;
       top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
       border: 0;
       border-radius: 50%;
-      width: 37px;
-      height: 37px;
       background: white;
       font-size: 24px;
+      line-height: 1;
     }
-    .heart.saved { color: #bd2929; }
-    .product-info { padding: 16px 0; }
-    .product-info small { color: var(--gray); font-size: 14px; }
-    .product-info h3 { font-size: 16px; margin: 8px 0; }
-    .product-name { border: 0; padding: 0; background: none; text-align: left; font-weight: bold; }
-    .price { color: #b62828; font-weight: bold; }
-    .old-price { color: #777; text-decoration: line-through; font-size: 14px; margin-left: 7px; }
-    .product-card .btn { width: 100%; padding: 10px; font-size: 14px; }
-    .empty { grid-column: 1/-1; text-align: center; padding: 45px 15px; color: var(--gray); }
-    .catalog-note { color: var(--gray); margin: 0 0 20px; font-size: 14px; }
 
-    /* Collections */
-    .collections-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; }
-    .collection { background: white; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
-    .collection img { height: 320px; }
-    .collection-content { padding: 27px; }
-    .collection-content h3 { font: bold 26px Georgia, serif; margin: 10px 0 15px; }
-    .collection-content p { color: var(--gray); }
-    .collection-content .eyebrow { font-size: 12px; }
+    .heart.saved {
+      color: #bb2525;
+    }
+
+    .product-info {
+      padding: 15px 0;
+    }
+
+    .product-info small {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .product-info h3 {
+      margin: 7px 0;
+      font-size: 16px;
+    }
+
+    .product-name {
+      border: 0;
+      background: none;
+      padding: 0;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .price {
+      color: #b32626;
+      font-weight: 700;
+    }
+
+    .old-price {
+      color: #777;
+      font-size: 14px;
+      text-decoration: line-through;
+      margin-left: 7px;
+    }
+
+    .product-card .btn {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 40px 10px;
+      text-align: center;
+      color: var(--gray);
+    }
+
+    /* Bộ sưu tập */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .collection {
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .collection img {
+      height: 300px;
+    }
+
+    .collection-content {
+      padding: 26px;
+    }
+
+    .collection-content h3 {
+      font-size: 25px;
+      margin: 10px 0 14px;
+    }
+
+    .collection-content p {
+      color: var(--gray);
+    }
 
     /* Sale */
-    .sale { background: var(--dark); color: white; }
+    .sale {
+      background: var(--dark);
+      color: white;
+    }
+
     .sale-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 30px;
       flex-wrap: wrap;
     }
-    .sale h2 { font-size: clamp(30px,4vw,48px); margin-bottom: 15px; }
-    .sale p { color: #ddd; }
-    .sale .eyebrow { color: #e4c778; }
 
-    /* About */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .about-grid img { height: 500px; border-radius: 16px; }
-    .about-grid h2 { font-size: clamp(32px,4vw,48px); margin-bottom: 25px; }
-    .about-grid p { color: var(--gray); }
-    .values { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin-top: 55px; }
-    .value { border-top: 2px solid var(--gold); padding-top: 22px; }
-    .value h3 { font: bold 23px Georgia, serif; margin-bottom: 14px; }
-    .value p { color: var(--gray); }
+    .sale h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      margin-bottom: 15px;
+    }
 
-    /* Contact & newsletter */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-    .contact-item { margin-bottom: 22px; }
-    .contact-item strong { display: block; margin-bottom: 4px; }
-    .contact-item p { color: var(--gray); margin: 0; overflow-wrap: anywhere; }
-    .form-card { padding: 30px; background: white; border-radius: 16px; border: 1px solid var(--line); }
-    .form-card h3 { font: bold 27px Georgia, serif; margin-bottom: 25px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { display: block; font-weight: bold; font-size: 14px; margin-bottom: 16px; }
-    label input, label select, label textarea {
+    .sale p {
+      color: #ddd;
+    }
+
+    .sale .eyebrow {
+      color: #e3c77c;
+    }
+
+    /* Về chúng tôi */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-grid img {
+      height: 480px;
+      border-radius: 15px;
+    }
+
+    .about-grid h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 25px;
+    }
+
+    .about-grid p {
+      color: var(--gray);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .value {
+      border-top: 2px solid var(--gold);
+      padding-top: 22px;
+    }
+
+    .value h3 {
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .value p {
+      color: var(--gray);
+    }
+
+    /* Blog */
+    .blog-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .blog-preview img {
+      height: 350px;
+      border-radius: 14px;
+    }
+
+    .blog-preview h2 {
+      font-size: 32px;
+    }
+
+    /* Liên hệ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+    }
+
+    .contact-item {
+      margin-bottom: 22px;
+    }
+
+    .contact-item strong {
+      display: block;
+    }
+
+    .contact-item p {
+      margin: 4px 0 0;
+      color: var(--gray);
+      overflow-wrap: anywhere;
+    }
+
+    .form-card {
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .form-card h3 {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    label input,
+    label select,
+    label textarea {
       display: block;
       width: 100%;
       margin-top: 7px;
-      padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-weight: normal;
+      padding: 12px;
       background: white;
+      font-weight: 400;
     }
-    textarea { resize: vertical; min-height: 120px; }
-    .form-note { color: var(--gray); font-size: 14px; }
-    .status { font-size: 14px; margin: 14px 0 0; }
-    .newsletter { text-align: center; border-top: 1px solid var(--line); }
-    .newsletter h2 { font-size: 32px; }
-    .newsletter form { display: flex; gap: 10px; max-width: 540px; margin: 25px auto 0; }
+
+    textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .newsletter {
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 32px;
+    }
+
+    .newsletter form {
+      display: flex;
+      gap: 10px;
+      max-width: 530px;
+      margin: 24px auto;
+    }
+
     .newsletter input {
       flex: 1;
       min-width: 0;
-      padding: 13px 17px;
       border: 1px solid #ccc;
       border-radius: 30px;
+      padding: 12px 17px;
     }
 
     /* Footer */
-    footer { background: var(--dark); color: white; padding: 60px 0 25px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 45px; }
-    .footer-grid h3 { font-size: 16px; color: #e4c778; }
-    .footer-grid p, .footer-grid a { color: #bbb; font-size: 14px; }
-    .footer-grid a { display: block; margin: 8px 0; }
-    .footer-grid a:hover { color: white; }
-    .footer-brand { font: bold 26px Georgia, serif; letter-spacing: 2px; margin-bottom: 20px; }
-    .copyright { border-top: 1px solid #333; margin-top: 40px; padding-top: 22px; color: #aaa; font-size: 14px; }
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 55px 0 25px;
+    }
 
-    /* Dialogs */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .footer-grid h3 {
+      color: #e3c77c;
+      font-size: 16px;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .footer-grid a {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .footer-grid a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      padding-top: 22px;
+      margin-top: 35px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Hộp thoại */
     dialog {
-      border: 0;
-      padding: 26px;
       width: min(720px, 94vw);
       max-height: 90vh;
       overflow-y: auto;
-      border-radius: 16px;
+      padding: 25px;
+      border: 0;
+      border-radius: 14px;
       color: var(--dark);
     }
-    dialog::backdrop { background: #0009; }
-    .dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
-    .dialog-head h2 { font-size: 27px; margin: 0; }
-    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-    .detail-grid img { height: 380px; border-radius: 10px; }
-    .sizes { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0 25px; }
+
+    dialog::backdrop {
+      background: #0009;
+    }
+
+    .dialog-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .dialog-head h2 {
+      font-size: 25px;
+      margin: 0;
+    }
+
+    .close-btn {
+      border: 0;
+      padding: 5px 10px;
+      background: transparent;
+      font-size: 28px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .detail-grid img {
+      height: 370px;
+      border-radius: 10px;
+    }
+
+    .sizes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0 23px;
+    }
+
     .size {
-      padding: 9px 15px;
+      padding: 9px 14px;
       border: 1px solid #ccc;
       background: white;
       border-radius: 7px;
     }
-    .size.selected { background: var(--dark); color: white; border-color: var(--dark); }
-    .cart-item { display: grid; grid-template-columns: 75px 1fr auto; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .cart-item img { height: 95px; border-radius: 7px; }
-    .cart-item strong { font-size: 14px; }
-    .cart-item p { font-size: 14px; margin: 5px 0; }
-    .qty { display: flex; gap: 12px; align-items: center; margin-top: 8px; }
-    .qty button { border: 1px solid #ddd; width: 28px; height: 28px; background: white; border-radius: 5px; }
-    .remove-btn { border: 0; background: none; color: #a32626; align-self: start; font-size: 14px; }
-    .cart-total { display: flex; justify-content: space-between; font-weight: bold; margin: 25px 0; }
-    .wide { width: 100%; }
-    .toast {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
+
+    .size.selected {
       background: var(--dark);
       color: white;
-      padding: 13px 22px;
-      border-radius: 10px;
-      max-width: 92vw;
-      text-align: center;
-      box-shadow: 0 5px 25px #0003;
     }
-    [hidden] { display: none !important; }
 
-    @media (max-width: 1080px) {
-      .menu-btn { display: block; }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 75px 1fr auto;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item img {
+      height: 95px;
+      border-radius: 7px;
+    }
+
+    .cart-item strong,
+    .cart-item p {
+      font-size: 14px;
+    }
+
+    .cart-item p {
+      margin: 4px 0;
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .qty button {
+      width: 29px;
+      height: 29px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .remove-btn {
+      align-self: start;
+      border: 0;
+      background: transparent;
+      color: #b32626;
+      font-size: 14px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0;
+      font-weight: 700;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      z-index: 100;
+      max-width: 92vw;
+      padding: 13px 20px;
+      border-radius: 10px;
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 1120px) {
+      .menu-btn {
+        display: block;
+      }
+
       .nav {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
-        padding: 22px 5%;
-        box-shadow: 0 10px 20px #0002;
         flex-direction: column;
         align-items: flex-start;
+        padding: 22px 5%;
+        background: white;
+        box-shadow: 0 10px 20px #0002;
       }
-      .nav.open { display: flex; }
-      .product-grid { grid-template-columns: repeat(2,1fr); }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 700px) {
-      .section { padding: 55px 0; }
-      .announcement { font-size: 12px; }
-      .header-inner { min-height: 75px; gap: 8px; }
-      .logo strong { font-size: 22px; letter-spacing: 3px; }
-      .logo span { font-size: 10px; }
-      .header-actions { gap: 0; }
-      .icon-btn { font-size: 21px; padding: 7px; }
-      .hero { min-height: 540px; }
-      .categories, .collections-grid, .values { grid-template-columns: 1fr; }
-      .category { height: 270px; }
-      .product-grid { gap: 16px; }
-      .product-photo { height: 245px; }
-      .product-info h3 { min-height: 38px; }
-      .old-price { display: block; margin-left: 0; }
-      .catalog-inputs { width: 100%; }
-      .catalog-inputs input { flex: 1; min-width: 130px; }
-      .catalog-inputs select { width: 155px; font-size: 14px; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .about-grid img { height: 350px; }
-      .values { gap: 20px; margin-top: 35px; }
-      .form-card { padding: 22px; }
-      .form-row { grid-template-columns: 1fr; gap: 0; }
-      .newsletter form { flex-direction: column; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-      .footer-grid > div:first-child { grid-column: 1/-1; }
-      .detail-grid { grid-template-columns: 1fr; }
-      .detail-grid img { height: 300px; }
-      dialog { padding: 20px; }
+      .section {
+        padding: 50px 0;
+      }
+
+      .header-inner {
+        min-height: 75px;
+      }
+
+      .logo strong {
+        font-size: 21px;
+      }
+
+      .header-actions {
+        gap: 0;
+      }
+
+      .action-btn {
+        padding: 6px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 510px;
+      }
+
+      .category-grid,
+      .collection-grid,
+      .values,
+      .about-grid,
+      .contact-grid,
+      .blog-preview {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        height: 260px;
+      }
+
+      .product-grid {
+        gap: 15px;
+      }
+
+      .product-photo {
+        height: 240px;
+      }
+
+      .product-info h3 {
+        min-height: 42px;
+      }
+
+      .old-price {
+        display: block;
+        margin-left: 0;
+      }
+
+      .search-sort {
+        width: 100%;
+      }
+
+      .search-sort input {
+        flex: 1;
+        min-width: 120px;
+      }
+
+      .search-sort select {
+        width: 150px;
+        font-size: 14px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        gap: 30px;
+      }
+
+      .about-grid img {
+        height: 350px;
+      }
+
+      .form-card {
+        padding: 22px;
+      }
+
+      .form-row,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter form {
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .detail-grid img {
+        height: 300px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -443,8 +1078,9 @@
 
   <header>
     <div class="container header-inner">
-      <button class="icon-btn menu-btn" id="menuBtn"
-              aria-label="Mở menu" aria-expanded="false"
+      <button class="action-btn menu-btn" id="menuBtn"
+              aria-label="Mở menu"
+              aria-expanded="false"
               aria-controls="mainNav">☰</button>
 
       <a class="logo" href="#hero">
@@ -456,23 +1092,20 @@
         <a href="#hero">Trang chủ</a>
         <a href="#products" onclick="resetCatalog()">Sản phẩm</a>
         <a href="#collections">BST mới</a>
-        <a href="#flashsale" class="sale-link">Khuyến mãi</a>
+        <a href="#flashsale">Khuyến mãi</a>
         <a href="#about">Về chúng tôi</a>
+        <a href="blog.html">Blog</a>
         <a href="#contact">Liên hệ</a>
       </nav>
 
       <div class="header-actions">
-        <button class="icon-btn" onclick="focusSearch()"
-                aria-label="Tìm kiếm">⌕</button>
-        <button class="icon-btn" onclick="showFavorites()"
-                aria-label="Xem sản phẩm yêu thích">
-          ♡<span class="count" id="wishlistCount">0</span>
+        <button class="action-btn" onclick="focusSearch()">Tìm</button>
+        <button class="action-btn" onclick="showFavorites()"
+                aria-label="Sản phẩm yêu thích">
+          ♡ <span class="count" id="wishlistCount">0</span>
         </button>
-        <button class="icon-btn" onclick="openModal('accountModal')"
-                aria-label="Tài khoản">♙</button>
-        <button class="icon-btn" onclick="showCart()"
-                aria-label="Mở giỏ hàng">
-          🛍<span class="count" id="cartCount">0</span>
+        <button class="action-btn" onclick="showCart()">
+          Giỏ <span class="count" id="cartCount">0</span>
         </button>
       </div>
     </div>
@@ -481,25 +1114,22 @@
   <main>
     <!-- TRANG CHỦ -->
     <section class="hero" id="hero">
-      <img class="hero-image"
-           src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85"
-           alt="Cảm hứng thời trang của LUMEN ATELIER"
-           fetchpriority="high">
+      <img
+        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85"
+        alt="Cảm hứng thời trang LUMEN ATELIER"
+        fetchpriority="high">
 
       <div class="hero-content">
         <span class="eyebrow">Bộ sưu tập Thu Đông 2026</span>
-        <h1>
-          ĐỊNH HÌNH PHONG CÁCH<br>
-          <em>Sang trọng & tối giản</em>
-        </h1>
+        <h1>Định hình phong cách<br>Sang trọng và tối giản</h1>
         <p>
           Những thiết kế thanh lịch dành cho nhịp sống hiện đại.
-          Khám phá phong cách mang dấu ấn của riêng bạn.
+          Khám phá phong cách mang dấu ấn riêng của bạn.
         </p>
         <div class="hero-buttons">
-          <a href="#products" class="btn btn-white"
+          <a class="btn btn-white" href="#products"
              onclick="resetCatalog()">Khám phá sản phẩm</a>
-          <a href="#collections" class="btn btn-outline">Bộ sưu tập mới</a>
+          <a class="btn btn-outline" href="#collections">Bộ sưu tập mới</a>
         </div>
       </div>
     </section>
@@ -509,29 +1139,29 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Khám phá LUMEN</span>
-          <h2>DANH MỤC NỔI BẬT</h2>
+          <h2>Danh mục nổi bật</h2>
         </div>
 
-        <div class="categories">
+        <div class="category-grid">
           <button class="category" onclick="selectCategory('Ao')">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
-                 alt="Áo sơ mi và áo thun">
-            <span>Áo sơ mi & T-shirt</span>
+            <img
+              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+              alt="Áo thun và áo sơ mi" loading="lazy">
+            <span>Áo sơ mi và T-shirt</span>
           </button>
 
           <button class="category" onclick="selectCategory('Quan')">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
-                 alt="Quần denim">
-            <span>Trousers & Denim</span>
+            <img
+              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
+              alt="Quần denim" loading="lazy">
+            <span>Trousers và Denim</span>
           </button>
 
           <button class="category" onclick="selectCategory('PhuKien')">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
-                 alt="Túi xách và phụ kiện">
-            <span>Túi xách & Phụ kiện</span>
+            <img
+              src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
+              alt="Túi xách và phụ kiện" loading="lazy">
+            <span>Túi xách và Phụ kiện</span>
           </button>
         </div>
       </div>
@@ -542,7 +1172,7 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Sản phẩm dành cho bạn</span>
-          <h2>DANH SÁCH SẢN PHẨM</h2>
+          <h2>Danh sách sản phẩm</h2>
         </div>
 
         <div class="catalog-tools">
@@ -553,7 +1183,7 @@
             <button class="filter" data-category="PhuKien">Phụ kiện</button>
           </div>
 
-          <div class="catalog-inputs">
+          <div class="search-sort">
             <input id="searchInput" type="search"
                    placeholder="Tìm sản phẩm..."
                    aria-label="Tìm sản phẩm">
@@ -571,29 +1201,30 @@
       </div>
     </section>
 
-    <!-- BỘ SƯU TẬP MỚI -->
+    <!-- BỘ SƯU TẬP -->
     <section class="section cream" id="collections">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">New collection · Thu Đông 2026</span>
-          <h2>BỘ SƯU TẬP MỚI</h2>
+          <span class="eyebrow">Thu Đông 2026</span>
+          <h2>Bộ sưu tập mới</h2>
           <p>
-            Ba cách phối, một tinh thần:
-            thanh lịch, thoải mái và mang dấu ấn riêng.
+            Thanh lịch, thoải mái và linh hoạt:
+            chọn bộ sưu tập phù hợp với nhịp sống của bạn.
           </p>
         </div>
 
-        <div class="collections-grid">
+        <div class="collection-grid">
           <article class="collection">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80"
-                 alt="Áo khoác trong bộ sưu tập Modern Elegance">
+            <img
+              src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80"
+              alt="Áo khoác trong bộ sưu tập Modern Elegance"
+              loading="lazy">
             <div class="collection-content">
               <span class="eyebrow">01 / Thanh lịch</span>
               <h3>Modern Elegance</h3>
               <p>
-                Sơ mi lụa, blazer và quần trousers
-                cho những ngày cần một diện mạo chỉn chu.
+                Sơ mi, blazer và quần trousers cho những ngày
+                cần một diện mạo chỉn chu.
               </p>
               <button class="btn"
                       onclick="showCollection('Modern Elegance',[1,2,3])">
@@ -603,15 +1234,16 @@
           </article>
 
           <article class="collection">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80"
-                 alt="Trang phục Everyday Essentials">
+            <img
+              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80"
+              alt="Trang phục Everyday Essentials"
+              loading="lazy">
             <div class="collection-content">
               <span class="eyebrow">02 / Hằng ngày</span>
               <h3>Everyday Essentials</h3>
               <p>
-                Hoodie, denim và áo len polo dễ kết hợp
-                cho những ngày đi học, đi chơi và dạo phố.
+                Hoodie, denim và áo polo dễ kết hợp
+                cho những ngày năng động.
               </p>
               <button class="btn"
                       onclick="showCollection('Everyday Essentials',[5,6,8])">
@@ -621,9 +1253,10 @@
           </article>
 
           <article class="collection">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80"
-                 alt="Túi xách trong bộ sưu tập Finishing Touch">
+            <img
+              src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80"
+              alt="Túi xách Finishing Touch"
+              loading="lazy">
             <div class="collection-content">
               <span class="eyebrow">03 / Điểm nhấn</span>
               <h3>Finishing Touch</h3>
@@ -645,12 +1278,9 @@
     <section class="section sale" id="flashsale">
       <div class="container sale-inner">
         <div>
-          <span class="eyebrow">Ưu đãi bộ sưu tập</span>
-          <h2>HOÀN THIỆN TỦ ĐỒ CỦA BẠN</h2>
-          <p>
-            Khám phá sản phẩm có giá ưu đãi.
-            Giá gốc và giá hiện tại hiển thị tại từng sản phẩm.
-          </p>
+          <span class="eyebrow">Ưu đãi sản phẩm</span>
+          <h2>Hoàn thiện tủ đồ của bạn</h2>
+          <p>Khám phá những món đồ đang có giá ưu đãi tại LUMEN.</p>
         </div>
         <button class="btn btn-white" onclick="showSale()">
           Xem sản phẩm ưu đãi
@@ -662,31 +1292,27 @@
     <section class="section" id="about">
       <div class="container">
         <div class="about-grid">
-          <img loading="lazy"
-               src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=80"
-               alt="Không gian trưng bày thời trang">
+          <img
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=80"
+            alt="Không gian trưng bày thời trang"
+            loading="lazy">
 
           <div>
             <span class="eyebrow">Về LUMEN ATELIER</span>
-            <h2>Vẻ đẹp từ những<br><em>điều tinh giản.</em></h2>
-
+            <h2>Vẻ đẹp từ những điều tinh giản</h2>
             <p>
-              LUMEN ATELIER hướng đến thời trang ứng dụng
-              dành cho nam và nữ yêu thích phong cách hiện đại.
-              Chúng tôi xem trang phục là cách mỗi người thể hiện
-              cá tính và tự tin trong cuộc sống thường ngày.
+              LUMEN ATELIER hướng đến thời trang ứng dụng dành cho
+              nam và nữ yêu thích phong cách hiện đại. Chúng tôi xem
+              trang phục là cách mỗi người thể hiện cá tính và tự tin
+              trong cuộc sống thường ngày.
             </p>
-
             <p>
-              Tinh thần thiết kế của LUMEN tập trung vào
-              phom dáng gọn gàng, bảng màu dễ phối và những chi tiết
-              vừa đủ. Từ công sở đến những buổi dạo phố,
-              mỗi lựa chọn đều hướng đến sự linh hoạt trong tủ đồ.
+              Tinh thần thiết kế của LUMEN tập trung vào phom dáng
+              gọn gàng, bảng màu dễ phối và những chi tiết vừa đủ.
+              Từ công sở đến những buổi dạo phố, mỗi lựa chọn đều
+              hướng đến sự linh hoạt trong tủ đồ.
             </p>
-
-            <a href="#collections" class="btn">
-              Khám phá phong cách LUMEN
-            </a>
+            <a class="btn" href="#collections">Khám phá phong cách LUMEN</a>
           </div>
         </div>
 
@@ -710,31 +1336,50 @@
           <article class="value">
             <h3>Đồng hành cùng bạn</h3>
             <p>
-              Hỗ trợ chọn kiểu dáng, kích cỡ và cách phối
-              để mỗi món đồ trở thành một phần hữu ích trong tủ đồ.
+              Hỗ trợ chọn kiểu dáng, kích cỡ và cách phối để mỗi
+              món đồ trở thành một phần hữu ích trong tủ đồ.
             </p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- DẪN ĐẾN BLOG -->
+    <section class="section cream">
+      <div class="container blog-preview">
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
+          alt="Gợi ý phối trang phục cho tủ đồ tối giản"
+          loading="lazy">
+        <div>
+          <span class="eyebrow">LUMEN Journal</span>
+          <h2>Mặc đẹp bắt đầu từ những lựa chọn nhỏ</h2>
+          <p class="muted">
+            Đọc những gợi ý phối áo sơ mi, xây dựng tủ đồ tối giản
+            và chăm sóc trang phục tại Blog LUMEN.
+          </p>
+          <a class="btn" href="blog.html">Đọc Blog</a>
+        </div>
+      </div>
+    </section>
+
     <!-- LIÊN HỆ -->
-    <section class="section cream" id="contact">
+    <section class="section" id="contact">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">LUMEN luôn sẵn sàng lắng nghe</span>
-          <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+          <h2>Liên hệ với chúng tôi</h2>
         </div>
 
         <div class="contact-grid">
           <div>
-            <h3 class="serif" style="font-size:28px">Bạn cần hỗ trợ?</h3>
+            <h3 style="font-size:27px">Bạn cần hỗ trợ?</h3>
             <p class="muted">
-              Bạn muốn tư vấn sản phẩm, chọn size hay tìm hiểu
-              về đơn hàng? Hãy để lại nội dung trong form bên cạnh.
+              Bạn cần tư vấn sản phẩm, chọn size hay hỗ trợ đơn hàng?
+              Hãy để lại nội dung trong form bên cạnh.
             </p>
 
-            <!-- Thay thông tin mẫu bằng thông tin cửa hàng thật -->
+            <!-- Thay bằng thông tin liên hệ thật -->
             <div class="contact-item">
               <strong>Địa chỉ cửa hàng</strong>
               <p>123 Đường Lê Lợi, TP. Hồ Chí Minh</p>
@@ -751,13 +1396,10 @@
               <strong>Giờ hỗ trợ</strong>
               <p>08:00 – 22:00, từ thứ Hai đến Chủ nhật</p>
             </div>
-
-            <p class="form-note">
-              Địa chỉ, hotline và email trên là thông tin mẫu.
-            </p>
+            <p class="form-note">Thông tin liên hệ trên là thông tin mẫu.</p>
           </div>
 
-          <form class="form-card" id="contactForm">
+          <form class="form-card cream" id="contactForm">
             <h3>Để lại lời nhắn</h3>
 
             <div class="form-row">
@@ -793,8 +1435,8 @@
 
             <label>
               Nội dung *
-              <textarea name="message" rows="4" minlength="10"
-                        maxlength="3000"
+              <textarea name="message" rows="4"
+                        minlength="10" maxlength="3000"
                         placeholder="Nhập ít nhất 10 ký tự."
                         required></textarea>
             </label>
@@ -802,32 +1444,32 @@
             <p class="form-note">
               Form demo chỉ kiểm tra thông tin, chưa gửi yêu cầu.
             </p>
-            <button class="btn" type="submit">Kiểm tra yêu cầu</button>
-            <p class="status" id="contactStatus"
-               role="status" aria-live="polite"></p>
+            <button class="btn">Kiểm tra yêu cầu</button>
+            <p id="contactStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
     <!-- ĐĂNG KÝ EMAIL -->
-    <section class="section newsletter">
+    <section class="section cream newsletter">
       <div class="container">
         <span class="eyebrow">LUMEN CLUB</span>
-        <h2>NHẬN TIN TỪ LUMEN</h2>
-        <p class="muted">Cập nhật bộ sưu tập và chương trình ưu đãi mới.</p>
+        <h2>Nhận tin từ LUMEN</h2>
+        <p class="muted">Cập nhật bộ sưu tập và ưu đãi mới.</p>
 
         <form id="newsletterForm">
-          <input type="email" required placeholder="Email của bạn..."
-                 aria-label="Email đăng ký nhận tin">
+          <input type="email" placeholder="Email của bạn..."
+                 aria-label="Email đăng ký nhận tin" required>
           <button class="btn">Đăng ký</button>
         </form>
+
         <p class="form-note">Đăng ký email hiện là chức năng demo.</p>
       </div>
     </section>
   </main>
 
-  <!-- CHÂN TRANG -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -840,25 +1482,24 @@
         </div>
 
         <div>
-          <h3>KHÁM PHÁ</h3>
+          <h3>Khám phá</h3>
           <a href="#products" onclick="resetCatalog()">Sản phẩm</a>
           <a href="#collections">Bộ sưu tập mới</a>
-          <a href="#flashsale">Khuyến mãi</a>
           <a href="#about">Về chúng tôi</a>
+          <a href="blog.html">Blog thời trang</a>
         </div>
 
         <div>
-          <h3>HỖ TRỢ</h3>
+          <h3>Hỗ trợ</h3>
           <a href="#contact">Liên hệ</a>
           <a href="#contact">Tư vấn chọn size</a>
           <a href="#contact">Vận chuyển và đổi trả</a>
-          <p>08:00 – 22:00 hằng ngày</p>
         </div>
       </div>
 
       <div class="copyright">
         © <span id="year"></span> LUMEN ATELIER.
-        Website mẫu. Các giao dịch và biểu mẫu chưa kết nối máy chủ.
+        Website mẫu, chưa kết nối xử lý giao dịch.
       </div>
     </div>
   </footer>
@@ -867,7 +1508,7 @@
   <dialog id="productModal" aria-labelledby="detailTitle">
     <div class="dialog-head">
       <h2 id="detailTitle">Chi tiết sản phẩm</h2>
-      <button class="icon-btn" data-close aria-label="Đóng">×</button>
+      <button class="close-btn" data-close aria-label="Đóng">×</button>
     </div>
     <div id="productDetail"></div>
   </dialog>
@@ -876,16 +1517,20 @@
   <dialog id="cartModal" aria-labelledby="cartTitle">
     <div class="dialog-head">
       <h2 id="cartTitle">Giỏ hàng</h2>
-      <button class="icon-btn" data-close aria-label="Đóng">×</button>
+      <button class="close-btn" data-close aria-label="Đóng">×</button>
     </div>
+
     <div id="cartItems"></div>
+
     <div class="cart-total">
       <span>Tạm tính</span>
       <span id="cartTotal">0đ</span>
     </div>
+
     <p class="form-note">
       Phí vận chuyển sẽ được xác nhận khi xử lý đơn.
     </p>
+
     <button class="btn wide" id="checkoutBtn" onclick="showCheckout()">
       Tiến hành đặt hàng
     </button>
@@ -895,7 +1540,7 @@
   <dialog id="checkoutModal" aria-labelledby="checkoutTitle">
     <div class="dialog-head">
       <h2 id="checkoutTitle">Thông tin đặt hàng</h2>
-      <button class="icon-btn" data-close aria-label="Đóng">×</button>
+      <button class="close-btn" data-close aria-label="Đóng">×</button>
     </div>
 
     <form id="checkoutForm">
@@ -929,27 +1574,11 @@
     </form>
   </dialog>
 
-  <!-- TÀI KHOẢN -->
-  <dialog id="accountModal" aria-labelledby="accountTitle">
-    <div class="dialog-head">
-      <h2 id="accountTitle">Tài khoản LUMEN</h2>
-      <button class="icon-btn" data-close aria-label="Đóng">×</button>
-    </div>
-    <p>
-      Tài khoản khách hàng cần kết nối hệ thống để đăng nhập,
-      lưu địa chỉ và theo dõi đơn hàng.
-    </p>
-    <p class="form-note">
-      Trong bản demo, giỏ hàng và danh sách yêu thích
-      được lưu trên trình duyệt của bạn.
-    </p>
-    <button class="btn" data-close>Tiếp tục mua sắm</button>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="toast" id="toast"
+       role="status" aria-live="polite" hidden></div>
 
   <script>
-    // ================= DỮ LIỆU SẢN PHẨM =================
+    // Dữ liệu mẫu: có thể sửa tên, giá, ảnh tại đây.
     const products = [
       {
         id: 1,
@@ -960,7 +1589,7 @@
         tag: "Mới",
         sizes: ["S", "M", "L", "XL"],
         image: "https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=800&q=80",
-        description: "Áo sơ mi thanh lịch, dễ kết hợp với quần trousers hoặc denim."
+        description: "Áo sơ mi thanh lịch, dễ phối cùng quần trousers hoặc denim."
       },
       {
         id: 2,
@@ -971,7 +1600,7 @@
         tag: "Nổi bật",
         sizes: ["S", "M", "L"],
         image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80",
-        description: "Thiết kế blazer phom rộng cho phong cách hiện đại và chỉn chu."
+        description: "Blazer phom rộng cho phong cách hiện đại và chỉn chu."
       },
       {
         id: 3,
@@ -1015,7 +1644,7 @@
         tag: "Nổi bật",
         sizes: ["S", "M", "L", "XL"],
         image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
-        description: "Quần denim ống đứng dễ kết hợp với áo thun, sơ mi và áo khoác."
+        description: "Quần denim ống đứng dễ kết hợp với áo thun và sơ mi."
       },
       {
         id: 7,
@@ -1026,7 +1655,7 @@
         tag: "Ưu đãi",
         sizes: ["One size"],
         image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
-        description: "Kính râm là phụ kiện hoàn thiện phong cách dạo phố."
+        description: "Phụ kiện hoàn thiện phong cách dạo phố."
       },
       {
         id: 8,
@@ -1037,7 +1666,7 @@
         tag: "Nổi bật",
         sizes: ["S", "M", "L", "XL"],
         image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80",
-        description: "Áo polo dệt kim mang tinh thần thanh lịch và dễ ứng dụng."
+        description: "Áo polo dệt kim thanh lịch và dễ ứng dụng."
       }
     ];
 
@@ -1055,17 +1684,34 @@
       PhuKien: "Phụ kiện"
     };
 
-    function readStorage(key, fallback) {
+    // Escape nội dung trước khi chèn vào HTML.
+    function escapeHTML(value) {
+      const replacements = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      };
+
+      return String(value).replace(
+        /[&<>"']/g,
+        character => replacements[character]
+      );
+    }
+
+    function readStorage(key) {
       try {
         const value = JSON.parse(localStorage.getItem(key));
-        return Array.isArray(value) ? value : fallback;
+        return Array.isArray(value) ? value : [];
       } catch {
-        return fallback;
+        return [];
       }
     }
 
-    let cart = readStorage("lumen-cart", []).filter(item => {
-      const product = products.find(p => p.id === item.id);
+    let cart = readStorage("lumen-cart").filter(item => {
+      const product = products.find(p => p.id === item?.id);
+
       return product &&
         product.sizes.includes(item.size) &&
         Number.isInteger(item.quantity) &&
@@ -1075,8 +1721,8 @@
 
     let wishlist = [
       ...new Set(
-        readStorage("lumen-wishlist", []).filter(id =>
-          products.some(p => p.id === id)
+        readStorage("lumen-wishlist").filter(id =>
+          products.some(product => product.id === id)
         )
       )
     ];
@@ -1090,21 +1736,22 @@
     let selectedSize = null;
     let toastTimer;
 
+    function updateCounts() {
+      $("#cartCount").textContent =
+        cart.reduce((total, item) => total + item.quantity, 0);
+
+      $("#wishlistCount").textContent = wishlist.length;
+    }
+
     function persist() {
       try {
         localStorage.setItem("lumen-cart", JSON.stringify(cart));
         localStorage.setItem("lumen-wishlist", JSON.stringify(wishlist));
       } catch {
-        // Trang vẫn hoạt động khi trình duyệt chặn localStorage.
+        // Vẫn sử dụng được nếu trình duyệt chặn lưu trữ.
       }
+
       updateCounts();
-    }
-
-    function updateCounts() {
-      $("#cartCount").textContent =
-        cart.reduce((sum, item) => sum + item.quantity, 0);
-
-      $("#wishlistCount").textContent = wishlist.length;
     }
 
     function showToast(message) {
@@ -1117,7 +1764,6 @@
       }, 3500);
     }
 
-    // ================= HIỂN THỊ SẢN PHẨM =================
     function normalize(text) {
       return text.toLocaleLowerCase("vi")
         .normalize("NFD")
@@ -1125,23 +1771,26 @@
         .replace(/đ/g, "d");
     }
 
+    // ================= SẢN PHẨM =================
     function renderProducts() {
       const query = normalize($("#searchInput").value.trim());
 
-      let list = products.filter(product => {
-        return (
-          (currentCategory === "all" ||
-            product.category === currentCategory) &&
-          (!collectionIds || collectionIds.includes(product.id)) &&
-          (!favoritesOnly || wishlist.includes(product.id)) &&
-          (!saleOnly || product.oldPrice > product.price) &&
-          normalize(product.name).includes(query)
-        );
-      });
+      let list = products.filter(product =>
+        (currentCategory === "all" ||
+          product.category === currentCategory) &&
+        (!collectionIds || collectionIds.includes(product.id)) &&
+        (!favoritesOnly || wishlist.includes(product.id)) &&
+        (!saleOnly || product.oldPrice > product.price) &&
+        normalize(product.name).includes(query)
+      );
 
-      const sort = $("#sortSelect").value;
-      if (sort === "asc") list.sort((a, b) => a.price - b.price);
-      if (sort === "desc") list.sort((a, b) => b.price - a.price);
+      if ($("#sortSelect").value === "asc") {
+        list.sort((a, b) => a.price - b.price);
+      }
+
+      if ($("#sortSelect").value === "desc") {
+        list.sort((a, b) => b.price - a.price);
+      }
 
       document.querySelectorAll("[data-category]").forEach(button => {
         const active = button.dataset.category === currentCategory;
@@ -1150,31 +1799,34 @@
       });
 
       const notes = [];
+
       if (collectionName) notes.push("Bộ sưu tập: " + collectionName);
       if (favoritesOnly) notes.push("Sản phẩm yêu thích");
       if (saleOnly) notes.push("Sản phẩm ưu đãi");
+
       notes.push(list.length + " sản phẩm");
       $("#catalogNote").textContent = notes.join(" · ");
 
       $("#productGrid").innerHTML = list.length
         ? list.map(product => {
           const saved = wishlist.includes(product.id);
+          const name = escapeHTML(product.name);
 
           return `
             <article class="product-card">
               <div class="product-photo">
-                <button class="product-image-btn"
+                <button class="image-btn"
                         onclick="openProduct(${product.id})"
-                        aria-label="Xem ${product.name}">
-                  <img src="${product.image}" alt="${product.name}"
-                       loading="lazy">
+                        aria-label="Xem ${name}">
+                  <img src="${escapeHTML(product.image)}"
+                       alt="${name}" loading="lazy">
                 </button>
 
-                <span class="tag">${product.tag}</span>
+                <span class="tag">${escapeHTML(product.tag)}</span>
 
                 <button class="heart ${saved ? "saved" : ""}"
                         onclick="toggleWishlist(${product.id})"
-                        aria-label="${saved ? "Bỏ yêu thích" : "Yêu thích"} ${product.name}"
+                        aria-label="${saved ? "Bỏ yêu thích" : "Yêu thích"} ${name}"
                         aria-pressed="${saved}">
                   ${saved ? "♥" : "♡"}
                 </button>
@@ -1185,7 +1837,7 @@
                 <h3>
                   <button class="product-name"
                           onclick="openProduct(${product.id})">
-                    ${product.name}
+                    ${name}
                   </button>
                 </h3>
                 <span class="price">${money(product.price)}</span>
@@ -1194,15 +1846,17 @@
 
               <button class="btn btn-outline"
                       onclick="openProduct(${product.id})">
-                Chọn size & thêm vào giỏ
+                Chọn size và thêm vào giỏ
               </button>
             </article>
           `;
         }).join("")
-        : `<p class="empty">
-             Không tìm thấy sản phẩm phù hợp.
-             Hãy thử từ khóa hoặc danh mục khác.
-           </p>`;
+        : `
+          <p class="empty">
+            Không tìm thấy sản phẩm phù hợp.
+            Hãy thử từ khóa hoặc danh mục khác.
+          </p>
+        `;
     }
 
     function resetCatalog() {
@@ -1257,12 +1911,13 @@
 
     function toggleWishlist(id) {
       if (wishlist.includes(id)) {
-        wishlist = wishlist.filter(productId => productId !== id);
+        wishlist = wishlist.filter(item => item !== id);
         showToast("Đã bỏ sản phẩm khỏi danh sách yêu thích.");
       } else {
         wishlist.push(id);
         showToast("Đã thêm sản phẩm vào danh sách yêu thích.");
       }
+
       persist();
       renderProducts();
     }
@@ -1280,6 +1935,7 @@
 
       modal.addEventListener("click", event => {
         const rect = modal.getBoundingClientRect();
+
         const outside =
           event.clientX < rect.left ||
           event.clientX > rect.right ||
@@ -1290,7 +1946,7 @@
       });
     });
 
-    // ================= CHI TIẾT SẢN PHẨM =================
+    // ================= CHI TIẾT =================
     function openProduct(id) {
       const product = products.find(item => item.id === id);
       if (!product) return;
@@ -1301,7 +1957,8 @@
 
       $("#productDetail").innerHTML = `
         <div class="detail-grid">
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${escapeHTML(product.image)}"
+               alt="${escapeHTML(product.name)}">
 
           <div>
             <span class="eyebrow">
@@ -1313,14 +1970,16 @@
               <span class="old-price">${money(product.oldPrice)}</span>
             </p>
 
-            <p class="muted">${product.description}</p>
+            <p class="muted">${escapeHTML(product.description)}</p>
 
             <strong>Chọn kích cỡ</strong>
+
             <div class="sizes" role="group" aria-label="Kích cỡ">
               ${product.sizes.map(size => `
                 <button class="size" type="button"
-                        data-size="${size}" aria-pressed="false">
-                  ${size}
+                        data-size="${escapeHTML(size)}"
+                        aria-pressed="false">
+                  ${escapeHTML(size)}
                 </button>
               `).join("")}
             </div>
@@ -1358,16 +2017,16 @@
         return;
       }
 
-      const item = cart.find(product =>
-        product.id === activeProductId && product.size === selectedSize
+      const existing = cart.find(item =>
+        item.id === activeProductId && item.size === selectedSize
       );
 
-      if (item) {
-        if (item.quantity >= 99) {
+      if (existing) {
+        if (existing.quantity >= 99) {
           showToast("Tối đa 99 sản phẩm cho mỗi kích cỡ.");
           return;
         }
-        item.quantity++;
+        existing.quantity++;
       } else {
         cart.push({
           id: activeProductId,
@@ -1388,18 +2047,19 @@
 
           return `
             <div class="cart-item">
-              <img src="${product.image}" alt="${product.name}">
+              <img src="${escapeHTML(product.image)}"
+                   alt="${escapeHTML(product.name)}">
 
               <div>
-                <strong>${product.name}</strong>
-                <p class="muted">Size: ${item.size}</p>
+                <strong>${escapeHTML(product.name)}</strong>
+                <p class="muted">Size: ${escapeHTML(item.size)}</p>
                 <p class="price">${money(product.price)}</p>
 
                 <div class="qty">
-                  <button onclick="changeQuantity(${index},-1)"
+                  <button onclick="changeQuantity(${index}, -1)"
                           aria-label="Giảm số lượng">−</button>
                   <span>${item.quantity}</span>
-                  <button onclick="changeQuantity(${index},1)"
+                  <button onclick="changeQuantity(${index}, 1)"
                           aria-label="Tăng số lượng">+</button>
                 </div>
               </div>
@@ -1411,7 +2071,7 @@
             </div>
           `;
         }).join("")
-        : `<p class="empty">Giỏ hàng của bạn đang trống.</p>`;
+        : '<p class="empty">Giỏ hàng của bạn đang trống.</p>';
 
       const total = cart.reduce((sum, item) => {
         const product = products.find(p => p.id === item.id);
@@ -1429,6 +2089,7 @@
 
     function changeQuantity(index, delta) {
       if (!cart[index]) return;
+
       const next = cart[index].quantity + delta;
       if (next > 99) return;
 
@@ -1462,25 +2123,25 @@
       $("#checkoutModal").close();
 
       showToast(
-        "Đã hoàn tất đơn hàng mẫu. Chưa có đơn được gửi hoặc khoản tiền được thu."
+        "Đã hoàn tất đơn hàng mẫu. Chưa có đơn được gửi hoặc tiền được thu."
       );
     });
 
-    // ================= BIỂU MẪU =================
+    // ================= FORM =================
     $("#contactForm").addEventListener("submit", event => {
       event.preventDefault();
 
       $("#contactStatus").textContent =
-        "Thông tin hợp lệ. Đây là bản demo nên yêu cầu chưa được gửi. Nội dung được giữ để bạn kiểm tra.";
+        "Thông tin hợp lệ. Đây là bản demo nên yêu cầu chưa được gửi.";
     });
 
     $("#newsletterForm").addEventListener("submit", event => {
       event.preventDefault();
-      showToast("Cảm ơn bạn! Bản demo chưa gửi email đăng ký.");
       event.target.reset();
+      showToast("Cảm ơn bạn! Bản demo chưa gửi email đăng ký.");
     });
 
-    // ================= MENU ĐIỆN THOẠI =================
+    // ================= MENU =================
     $("#menuBtn").addEventListener("click", () => {
       const open = $("#mainNav").classList.toggle("open");
       $("#menuBtn").setAttribute("aria-expanded", String(open));
@@ -1493,7 +2154,7 @@
       });
     });
 
-    // ================= LỌC & TÌM KIẾM =================
+    // ================= TÌM KIẾM =================
     document.querySelectorAll("[data-category]").forEach(button => {
       button.addEventListener("click", () => {
         currentCategory = button.dataset.category;
@@ -1504,7 +2165,6 @@
     $("#searchInput").addEventListener("input", renderProducts);
     $("#sortSelect").addEventListener("change", renderProducts);
 
-    // Khởi tạo trang.
     $("#year").textContent = new Date().getFullYear();
     updateCounts();
     renderProducts();
