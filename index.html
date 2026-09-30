@@ -4,19 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
+
+  <title>Cách phối áo sơ mi và tủ đồ tối giản | Blog LUMEN</title>
+
   <meta name="description"
-        content="Khám phá thời trang nam nữ LUMEN ATELIER: áo sơ mi, blazer, denim và phụ kiện cho phong cách thanh lịch hiện đại.">
-  <title>LUMEN ATELIER | Thời trang nam nữ hiện đại</title>
+        content="Khám phá cách phối áo sơ mi đi làm, xây dựng tủ đồ tối giản và chăm sóc trang phục cùng Blog LUMEN ATELIER.">
+
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title"
+        content="Gợi ý phối đồ và chăm sóc trang phục | Blog LUMEN">
+  <meta property="og:description"
+        content="Những gợi ý thực tế giúp bạn phối áo sơ mi, xây dựng tủ đồ tối giản và chăm sóc trang phục.">
+
+  <!--
+    Khi có tên miền thật, thêm canonical bằng URL chính thức:
+    <link rel="canonical" href="URL_CHINH_THUC_CUA_TRANG_BLOG">
+    Không sử dụng địa chỉ giả hoặc đường dẫn file trên máy tính.
+  -->
 
   <style>
-    :root {
-      --dark: #111;
-      --gold: #99731f;
-      --cream: #f9f8f6;
-      --gray: #626262;
-      --line: #e4e4e4;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -27,37 +36,25 @@
 
     body {
       margin: 0;
-      background: white;
-      color: var(--dark);
+      color: #111;
+      background: #f9f8f6;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* Dùng cùng một font cho tất cả thành phần */
-    h1, h2, h3, h4, h5, h6,
-    p, a, span, strong, em,
-    button, input, select, textarea, label {
+    h1, h2, h3, p, a, span, button {
       font-family: Arial, Helvetica, sans-serif;
-    }
-
-    h1, h2, h3, h4 {
-      line-height: 1.35;
       letter-spacing: normal;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.4;
       margin-top: 0;
-    }
-
-    button, input, select, textarea {
-      font-size: inherit;
-    }
-
-    button {
-      cursor: pointer;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -66,995 +63,204 @@
       object-fit: cover;
     }
 
-    p {
-      margin-top: 0;
-    }
-
-    section[id] {
-      scroll-margin-top: 95px;
-    }
-
     :focus-visible {
-      outline: 3px solid var(--gold);
+      outline: 3px solid #99731f;
       outline-offset: 4px;
     }
 
-    [hidden] {
-      display: none !important;
-    }
-
     .container {
-      width: min(1240px, 92%);
+      width: min(1120px, 92%);
       margin: auto;
-    }
-
-    .section {
-      padding: 75px 0;
-    }
-
-    .cream {
-      background: var(--cream);
-    }
-
-    .muted {
-      color: var(--gray);
-    }
-
-    .eyebrow {
-      display: block;
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 38px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      margin-bottom: 14px;
-    }
-
-    .section-heading p {
-      max-width: 650px;
-      margin: auto;
-      color: var(--gray);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--dark);
-      padding: 12px 23px;
-      border-radius: 28px;
-      background: var(--dark);
-      color: white;
-      font-weight: 700;
-      line-height: 1.5;
-      transition: background .2s;
-    }
-
-    .btn:hover {
-      background: #333;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--dark);
-    }
-
-    .btn-outline:hover {
-      background: var(--dark);
-      color: white;
-    }
-
-    .btn-white {
-      background: white;
-      border-color: white;
-      color: var(--dark);
-    }
-
-    .btn-white:hover {
-      background: #eee;
-    }
-
-    .btn:disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-
-    .wide {
-      width: 100%;
-    }
-
-    /* Header */
-    .announcement {
-      padding: 9px 15px;
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .announcement strong {
-      color: #e3c77c;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
+      background: white;
+      border-bottom: 1px solid #e4e4e4;
     }
 
     .header-inner {
-      min-height: 85px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
+      gap: 20px;
+      padding: 20px 0;
+      flex-wrap: wrap;
     }
 
     .logo {
+      font-size: 23px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav {
       display: flex;
-      flex-direction: column;
-      text-align: center;
-      line-height: 1.3;
+      gap: 22px;
+      flex-wrap: wrap;
     }
 
-    .logo strong {
-      font-size: 27px;
-      letter-spacing: 4px;
-    }
-
-    .logo span {
-      font-size: 12px;
-      letter-spacing: 3px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav a {
+    nav a {
+      text-decoration: none;
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav a:hover,
-    .nav a.active {
-      color: var(--gold);
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #99731f;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 7px;
+    .intro {
+      padding: 55px 0 35px;
     }
 
-    .action-btn {
-      border: 0;
-      background: transparent;
-      padding: 8px;
+    .breadcrumb {
       font-size: 14px;
+      color: #626262;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow {
+      color: #99731f;
       font-weight: 700;
+      font-size: 14px;
     }
 
-    .count {
-      display: inline-block;
-      background: var(--dark);
-      color: white;
-      border-radius: 20px;
-      padding: 1px 7px;
-      font-size: 12px;
-    }
-
-    .menu-btn {
-      display: none;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 590px;
-      display: grid;
-      place-items: center;
-      background: #222;
-      color: white;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .hero > img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: #0009;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
+    h1 {
+      font-size: clamp(30px, 5vw, 46px);
       max-width: 850px;
-      padding: 65px 20px;
+      margin: 12px 0 20px;
     }
 
-    .hero .eyebrow {
-      color: #e3c77c;
+    .intro > p {
+      max-width: 740px;
+      color: #626262;
     }
 
-    .hero h1 {
-      font-size: clamp(35px, 5.5vw, 62px);
-      margin: 15px 0 24px;
-    }
-
-    .hero p {
-      max-width: 640px;
-      margin: 0 auto 30px;
-      color: #eee;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .hero .btn-outline {
-      color: white;
-      border-color: white;
-    }
-
-    .hero .btn-outline:hover {
-      background: white;
-      color: var(--dark);
-    }
-
-    /* Danh mục */
-    .category-grid {
+    .layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .category {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-      border: 0;
-      border-radius: 14px;
-      padding: 0;
-      background: #ddd;
-    }
-
-    .category img {
-      height: 100%;
-      transition: transform .3s;
-    }
-
-    .category:hover img {
-      transform: scale(1.04);
-    }
-
-    .category::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent, #000b);
-    }
-
-    .category span {
-      position: absolute;
-      bottom: 22px;
-      left: 22px;
-      right: 22px;
-      z-index: 1;
-      color: white;
-      font-size: 23px;
-      font-weight: 700;
-      text-align: left;
-    }
-
-    /* Sản phẩm */
-    .catalog-tools {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 25px;
-      padding: 9px 17px;
-      font-size: 14px;
-    }
-
-    .filter.active {
-      background: var(--dark);
-      color: white;
-      border-color: var(--dark);
-    }
-
-    .search-sort {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .search-sort input,
-    .search-sort select {
-      border: 1px solid #ccc;
-      background: white;
-      border-radius: 8px;
-      padding: 10px 12px;
-      min-height: 44px;
-      max-width: 100%;
-    }
-
-    .search-sort input {
-      width: 205px;
-    }
-
-    .catalog-note {
-      color: var(--gray);
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .product-card {
-      min-width: 0;
-    }
-
-    .product-photo {
-      height: 320px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #eee;
-    }
-
-    .image-btn {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      padding: 0;
-      background: none;
-    }
-
-    .product-photo img {
-      height: 100%;
-      transition: transform .3s;
-    }
-
-    .product-photo:hover img {
-      transform: scale(1.04);
-    }
-
-    .tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--dark);
-      color: white;
-      padding: 4px 9px;
-      border-radius: 20px;
-      font-size: 12px;
-      pointer-events: none;
-    }
-
-    .heart {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 36px;
-      height: 36px;
-      border: 0;
-      border-radius: 50%;
-      background: white;
-      font-size: 24px;
-      line-height: 1;
-    }
-
-    .heart.saved {
-      color: #bb2525;
-    }
-
-    .product-info {
-      padding: 15px 0;
-    }
-
-    .product-info small {
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    .product-info h3 {
-      margin: 7px 0;
-      font-size: 16px;
-    }
-
-    .product-name {
-      border: 0;
-      background: none;
-      padding: 0;
-      text-align: left;
-      font-weight: 700;
-    }
-
-    .price {
-      color: #b32626;
-      font-weight: 700;
-    }
-
-    .old-price {
-      color: #777;
-      font-size: 14px;
-      text-decoration: line-through;
-      margin-left: 7px;
-    }
-
-    .product-card .btn {
-      width: 100%;
-      font-size: 14px;
-      padding: 10px;
-    }
-
-    .empty {
-      grid-column: 1 / -1;
-      padding: 40px 10px;
-      text-align: center;
-      color: var(--gray);
-    }
-
-    /* Bộ sưu tập */
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .collection {
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      overflow: hidden;
-      background: white;
-    }
-
-    .collection img {
-      height: 300px;
-    }
-
-    .collection-content {
-      padding: 26px;
-    }
-
-    .collection-content h3 {
-      font-size: 25px;
-      margin: 10px 0 14px;
-    }
-
-    .collection-content p {
-      color: var(--gray);
-    }
-
-    /* Sale */
-    .sale {
-      background: var(--dark);
-      color: white;
-    }
-
-    .sale-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      grid-template-columns: minmax(0, 1fr) 280px;
       gap: 30px;
-      flex-wrap: wrap;
+      align-items: start;
+      padding-bottom: 60px;
     }
 
-    .sale h2 {
-      font-size: clamp(29px, 4vw, 43px);
-      margin-bottom: 15px;
-    }
-
-    .sale p {
-      color: #ddd;
-    }
-
-    .sale .eyebrow {
-      color: #e3c77c;
-    }
-
-    /* Về chúng tôi */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .about-grid img {
-      height: 480px;
-      border-radius: 15px;
-    }
-
-    .about-grid h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      margin-bottom: 25px;
-    }
-
-    .about-grid p {
-      color: var(--gray);
-    }
-
-    .values {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .value {
-      border-top: 2px solid var(--gold);
-      padding-top: 22px;
-    }
-
-    .value h3 {
-      font-size: 23px;
-      margin-bottom: 14px;
-    }
-
-    .value p {
-      color: var(--gray);
-    }
-
-    /* Blog */
-    .blog-preview {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .blog-preview img {
-      height: 350px;
+    article {
+      background: white;
+      border: 1px solid #e4e4e4;
       border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      scroll-margin-top: 25px;
     }
 
-    .blog-preview h2 {
-      font-size: 32px;
+    article > img {
+      height: 340px;
     }
 
-    /* Liên hệ */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-    }
-
-    .contact-item {
-      margin-bottom: 22px;
-    }
-
-    .contact-item strong {
-      display: block;
-    }
-
-    .contact-item p {
-      margin: 4px 0 0;
-      color: var(--gray);
-      overflow-wrap: anywhere;
-    }
-
-    .form-card {
+    .article-content {
       padding: 30px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 15px;
     }
 
-    .form-card h3 {
-      font-size: 26px;
-      margin-bottom: 25px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    label {
-      display: block;
+    .meta {
+      color: #626262;
+      font-size: 14px;
       margin-bottom: 16px;
-      font-weight: 700;
-      font-size: 14px;
     }
 
-    label input,
-    label select,
-    label textarea {
-      display: block;
-      width: 100%;
-      margin-top: 7px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 12px;
+    article h2 {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    article h3 {
+      font-size: 20px;
+      margin: 26px 0 12px;
+    }
+
+    article p,
+    article li {
+      color: #444;
+    }
+
+    article ul {
+      padding-left: 22px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #111;
+      color: white;
+      border-radius: 25px;
+      padding: 11px 20px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .cta:hover {
+      background: #333;
+    }
+
+    aside {
       background: white;
-      font-weight: 400;
-    }
-
-    textarea {
-      min-height: 115px;
-      resize: vertical;
-    }
-
-    .form-note {
-      font-size: 14px;
-      color: var(--gray);
-    }
-
-    .newsletter {
-      text-align: center;
-    }
-
-    .newsletter h2 {
-      font-size: 32px;
-    }
-
-    .newsletter form {
-      display: flex;
-      gap: 10px;
-      max-width: 530px;
-      margin: 24px auto;
-    }
-
-    .newsletter input {
-      flex: 1;
-      min-width: 0;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      padding: 12px 17px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 55px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer-brand {
-      font-size: 25px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .footer-grid h3 {
-      color: #e3c77c;
-      font-size: 16px;
-    }
-
-    .footer-grid p,
-    .footer-grid a {
-      color: #bbb;
-      font-size: 14px;
-    }
-
-    .footer-grid a {
-      display: block;
-      margin: 8px 0;
-    }
-
-    .footer-grid a:hover {
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid #333;
-      padding-top: 22px;
-      margin-top: 35px;
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    /* Hộp thoại */
-    dialog {
-      width: min(720px, 94vw);
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 25px;
-      border: 0;
+      border: 1px solid #e4e4e4;
       border-radius: 14px;
-      color: var(--dark);
+      padding: 24px;
     }
 
-    dialog::backdrop {
-      background: #0009;
+    aside h2 {
+      font-size: 21px;
     }
 
-    .dialog-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 22px;
+    aside a {
+      display: block;
+      padding: 13px 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #444;
     }
 
-    .dialog-head h2 {
-      font-size: 25px;
-      margin: 0;
+    aside a:hover {
+      color: #99731f;
     }
 
-    .close-btn {
-      border: 0;
-      padding: 5px 10px;
-      background: transparent;
-      font-size: 28px;
+    .sidebar-note {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #626262;
     }
 
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .detail-grid img {
-      height: 370px;
-      border-radius: 10px;
-    }
-
-    .sizes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 15px 0 23px;
-    }
-
-    .size {
-      padding: 9px 14px;
-      border: 1px solid #ccc;
-      background: white;
-      border-radius: 7px;
-    }
-
-    .size.selected {
-      background: var(--dark);
-      color: white;
-    }
-
-    .cart-item {
-      display: grid;
-      grid-template-columns: 75px 1fr auto;
-      gap: 14px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .cart-item img {
-      height: 95px;
-      border-radius: 7px;
-    }
-
-    .cart-item strong,
-    .cart-item p {
+    footer {
+      padding: 35px 0;
+      background: #111;
+      color: #ccc;
       font-size: 14px;
     }
 
-    .cart-item p {
-      margin: 4px 0;
-    }
-
-    .qty {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .qty button {
-      width: 29px;
-      height: 29px;
-      border: 1px solid #ddd;
-      background: white;
-      border-radius: 5px;
-    }
-
-    .remove-btn {
-      align-self: start;
-      border: 0;
-      background: transparent;
-      color: #b32626;
-      font-size: 14px;
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      margin: 25px 0;
-      font-weight: 700;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 25px;
-      transform: translateX(-50%);
-      z-index: 100;
-      max-width: 92vw;
-      padding: 13px 20px;
-      border-radius: 10px;
-      background: var(--dark);
+    footer a {
       color: white;
-      text-align: center;
     }
 
-    @media (max-width: 1120px) {
-      .menu-btn {
-        display: block;
-      }
-
-      .nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 22px 5%;
-        background: white;
-        box-shadow: 0 10px 20px #0002;
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .section {
-        padding: 50px 0;
-      }
-
-      .header-inner {
-        min-height: 75px;
-      }
-
-      .logo strong {
-        font-size: 21px;
-      }
-
-      .header-actions {
-        gap: 0;
-      }
-
-      .action-btn {
-        padding: 6px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 510px;
-      }
-
-      .category-grid,
-      .collection-grid,
-      .values,
-      .about-grid,
-      .contact-grid,
-      .blog-preview {
+    @media (max-width: 800px) {
+      .layout {
         grid-template-columns: 1fr;
       }
 
-      .category {
+      aside {
+        grid-row: 1;
+      }
+
+      article > img {
         height: 260px;
       }
 
-      .product-grid {
-        gap: 15px;
+      .article-content {
+        padding: 23px;
       }
 
-      .product-photo {
-        height: 240px;
-      }
-
-      .product-info h3 {
-        min-height: 42px;
-      }
-
-      .old-price {
-        display: block;
-        margin-left: 0;
-      }
-
-      .search-sort {
-        width: 100%;
-      }
-
-      .search-sort input {
-        flex: 1;
-        min-width: 120px;
-      }
-
-      .search-sort select {
-        width: 150px;
-        font-size: 14px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        gap: 30px;
-      }
-
-      .about-grid img {
-        height: 350px;
-      }
-
-      .form-card {
-        padding: 22px;
-      }
-
-      .form-row,
-      .detail-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter form {
-        flex-direction: column;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: 1 / -1;
-      }
-
-      .detail-grid img {
-        height: 300px;
+      article h2 {
+        font-size: 24px;
       }
     }
 
@@ -1062,1112 +268,289 @@
       html {
         scroll-behavior: auto;
       }
-
-      * {
-        transition: none !important;
-      }
     }
   </style>
+
+  <!-- Dữ liệu có cấu trúc khớp với nội dung hiển thị -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog LUMEN ATELIER",
+    "description": "Gợi ý phối đồ, xây dựng tủ đồ tối giản và chăm sóc trang phục.",
+    "inLanguage": "vi-VN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LUMEN ATELIER"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Cách phối áo sơ mi đi làm: 3 gợi ý dễ áp dụng",
+        "description": "Gợi ý phối áo sơ mi cùng quần trousers, denim và blazer.",
+        "author": {
+          "@type": "Organization",
+          "name": "LUMEN ATELIER"
+        },
+        "inLanguage": "vi-VN"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Xây dựng tủ đồ tối giản từ những món đồ dễ phối",
+        "description": "Cách chọn màu sắc, trang phục cơ bản và phụ kiện cho tủ đồ tối giản.",
+        "author": {
+          "@type": "Organization",
+          "name": "LUMEN ATELIER"
+        },
+        "inLanguage": "vi-VN"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Cách chăm sóc áo sơ mi để giữ trang phục gọn đẹp",
+        "description": "Lưu ý đọc nhãn chăm sóc, giặt, phơi và cất áo sơ mi.",
+        "author": {
+          "@type": "Organization",
+          "name": "LUMEN ATELIER"
+        },
+        "inLanguage": "vi-VN"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <div class="announcement">
-    Miễn phí vận chuyển cho đơn từ 1.000.000đ ·
-    Mã ưu đãi <strong>LUMENNEW</strong>
-  </div>
-
   <header>
     <div class="container header-inner">
-      <button class="action-btn menu-btn" id="menuBtn"
-              aria-label="Mở menu"
-              aria-expanded="false"
-              aria-controls="mainNav">☰</button>
+      <a class="logo" href="index.html">LUMEN ATELIER</a>
 
-      <a class="logo" href="#hero">
-        <strong>LUMEN</strong>
-        <span>ATELIER</span>
-      </a>
-
-      <nav class="nav" id="mainNav" aria-label="Điều hướng chính">
-        <a href="#hero">Trang chủ</a>
-        <a href="#products" onclick="resetCatalog()">Sản phẩm</a>
-        <a href="#collections">BST mới</a>
-        <a href="#flashsale">Khuyến mãi</a>
-        <a href="#about">Về chúng tôi</a>
-        <a href="blog.html">Blog</a>
-        <a href="#contact">Liên hệ</a>
+      <nav aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="index.html#products">Sản phẩm</a>
+        <a href="index.html#collections">Bộ sưu tập</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="index.html#contact">Liên hệ</a>
       </nav>
-
-      <div class="header-actions">
-        <button class="action-btn" onclick="focusSearch()">Tìm</button>
-        <button class="action-btn" onclick="showFavorites()"
-                aria-label="Sản phẩm yêu thích">
-          ♡ <span class="count" id="wishlistCount">0</span>
-        </button>
-        <button class="action-btn" onclick="showCart()">
-          Giỏ <span class="count" id="cartCount">0</span>
-        </button>
-      </div>
     </div>
   </header>
 
-  <main>
-    <!-- TRANG CHỦ -->
-    <section class="hero" id="hero">
-      <img
-        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85"
-        alt="Cảm hứng thời trang LUMEN ATELIER"
-        fetchpriority="high">
+  <main class="container">
+    <div class="intro">
+      <nav class="breadcrumb" aria-label="Đường dẫn">
+        <a href="index.html">Trang chủ</a>
+        <span aria-hidden="true">/</span>
+        <span>Blog</span>
+      </nav>
 
-      <div class="hero-content">
-        <span class="eyebrow">Bộ sưu tập Thu Đông 2026</span>
-        <h1>Định hình phong cách<br>Sang trọng và tối giản</h1>
-        <p>
-          Những thiết kế thanh lịch dành cho nhịp sống hiện đại.
-          Khám phá phong cách mang dấu ấn riêng của bạn.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-white" href="#products"
-             onclick="resetCatalog()">Khám phá sản phẩm</a>
-          <a class="btn btn-outline" href="#collections">Bộ sưu tập mới</a>
-        </div>
-      </div>
-    </section>
+      <span class="eyebrow">LUMEN Journal</span>
 
-    <!-- DANH MỤC -->
-    <section class="section cream" id="categories">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Khám phá LUMEN</span>
-          <h2>Danh mục nổi bật</h2>
-        </div>
+      <h1>Gợi ý phối đồ và chăm sóc trang phục</h1>
 
-        <div class="category-grid">
-          <button class="category" onclick="selectCategory('Ao')">
-            <img
-              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
-              alt="Áo thun và áo sơ mi" loading="lazy">
-            <span>Áo sơ mi và T-shirt</span>
-          </button>
+      <p>
+        Những hướng dẫn dễ áp dụng giúp bạn phối áo sơ mi,
+        xây dựng tủ đồ linh hoạt và chăm sóc những món đồ yêu thích.
+      </p>
+    </div>
 
-          <button class="category" onclick="selectCategory('Quan')">
-            <img
-              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
-              alt="Quần denim" loading="lazy">
-            <span>Trousers và Denim</span>
-          </button>
+    <div class="layout">
+      <div>
+        <!-- BÀI VIẾT 1 -->
+        <article id="phoi-ao-so-mi">
+          <img
+            src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=1100&q=80"
+            alt="Áo sơ mi gợi ý cho phong cách đi làm"
+            width="1100" height="650">
 
-          <button class="category" onclick="selectCategory('PhuKien')">
-            <img
-              src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
-              alt="Túi xách và phụ kiện" loading="lazy">
-            <span>Túi xách và Phụ kiện</span>
-          </button>
-        </div>
-      </div>
-    </section>
+          <div class="article-content">
+            <p class="meta">Phối đồ · Tác giả: LUMEN ATELIER</p>
 
-    <!-- SẢN PHẨM -->
-    <section class="section" id="products">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Sản phẩm dành cho bạn</span>
-          <h2>Danh sách sản phẩm</h2>
-        </div>
+            <h2>Cách phối áo sơ mi đi làm: 3 gợi ý dễ áp dụng</h2>
 
-        <div class="catalog-tools">
-          <div class="filters" role="group" aria-label="Danh mục sản phẩm">
-            <button class="filter active" data-category="all">Tất cả</button>
-            <button class="filter" data-category="Ao">Áo</button>
-            <button class="filter" data-category="Quan">Quần</button>
-            <button class="filter" data-category="PhuKien">Phụ kiện</button>
+            <p>
+              Áo sơ mi là món đồ linh hoạt trong tủ đồ công sở.
+              Để phối áo sơ mi đi làm, bạn có thể bắt đầu từ
+              quần trousers, denim hoặc một chiếc blazer.
+              Chọn cách phối theo mức độ trang trọng của nơi làm việc
+              và cảm giác thoải mái khi mặc.
+            </p>
+
+            <h3>1. Áo sơ mi cùng quần trousers</h3>
+            <p>
+              Đây là cách phối phù hợp khi bạn muốn diện mạo chỉn chu.
+              Áo màu trắng, kem hoặc xanh nhạt dễ kết hợp với quần
+              đen, xám và xanh navy. Có thể sơ vin để bộ trang phục
+              trông gọn hơn, sau đó chọn giày và túi cùng tông màu.
+            </p>
+
+            <h3>2. Áo sơ mi cùng quần denim</h3>
+            <p>
+              Nếu môi trường làm việc cho phép trang phục thoải mái,
+              hãy thử áo sơ mi với denim ống đứng. Quần ít chi tiết
+              và màu tương đối đồng đều giúp tổng thể dễ phối.
+              Một đôi giày gọn gàng tạo cảm giác cân bằng giữa
+              lịch sự và năng động.
+            </p>
+
+            <h3>3. Thêm blazer khi cần trang trọng</h3>
+            <p>
+              Blazer là lớp khoác hữu ích cho buổi họp hoặc gặp gỡ.
+              Khi thử đồ, kiểm tra xem vai áo, tay áo và phần thân
+              có cho phép bạn di chuyển thoải mái hay không.
+              Nếu sơ mi có nhiều họa tiết, blazer trơn màu thường
+              dễ kết hợp hơn.
+            </p>
+
+            <p>
+              Trước khi mua, hãy xem thông tin kích cỡ và chất liệu
+              của từng sản phẩm. Phom vừa vặn với nhu cầu sử dụng
+              quan trọng hơn việc chọn theo một nhãn size cố định.
+            </p>
+
+            <a class="cta" href="index.html#products">
+              Khám phá áo sơ mi và blazer
+            </a>
           </div>
+        </article>
 
-          <div class="search-sort">
-            <input id="searchInput" type="search"
-                   placeholder="Tìm sản phẩm..."
-                   aria-label="Tìm sản phẩm">
+        <!-- BÀI VIẾT 2 -->
+        <article id="tu-do-toi-gian">
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=80"
+            alt="Trang phục và phụ kiện cho tủ đồ tối giản"
+            width="1100" height="650" loading="lazy">
 
-            <select id="sortSelect" aria-label="Sắp xếp sản phẩm">
-              <option value="default">Mặc định</option>
-              <option value="asc">Giá thấp đến cao</option>
-              <option value="desc">Giá cao đến thấp</option>
-            </select>
+          <div class="article-content">
+            <p class="meta">Phong cách · Tác giả: LUMEN ATELIER</p>
+
+            <h2>Xây dựng tủ đồ tối giản từ những món đồ dễ phối</h2>
+
+            <p>
+              Tủ đồ tối giản bắt đầu từ những món đồ bạn thường xuyên
+              sử dụng và có thể kết hợp với nhau. Không cần đặt ra
+              một số lượng cố định; hãy dựa vào lịch sinh hoạt,
+              môi trường làm việc và cách ăn mặc của bạn.
+            </p>
+
+            <h3>Chọn bảng màu dễ kết hợp</h3>
+            <p>
+              Đen, trắng, xám, kem và xanh navy là những màu dễ bắt đầu.
+              Bạn có thể chọn vài màu nền, rồi thêm một màu yêu thích
+              để tạo điểm nhấn. Điều quan trọng là các món đồ
+              phối được với những trang phục bạn đã có.
+            </p>
+
+            <h3>Ưu tiên những món đồ bạn thực sự cần</h3>
+            <ul>
+              <li>Áo thun trơn cho những ngày mặc thoải mái.</li>
+              <li>Áo sơ mi cho buổi đi làm hoặc gặp gỡ.</li>
+              <li>Quần denim hoặc trousers phù hợp thói quen sử dụng.</li>
+              <li>Một lớp áo khoác khi thời tiết hoặc hoàn cảnh cần đến.</li>
+              <li>Giày và túi thuận tiện cho các hoạt động thường ngày.</li>
+            </ul>
+
+            <h3>Thử phối trước khi mua thêm</h3>
+            <p>
+              Với mỗi món định mua, hãy nghĩ đến vài bộ trang phục
+              có thể phối từ tủ đồ hiện tại. Nếu món đồ chỉ phù hợp
+              một dịp ít khi xuất hiện, bạn có thể cân nhắc thêm
+              trước khi quyết định.
+            </p>
+
+            <p>
+              Một tủ đồ hữu ích giúp bạn chọn trang phục nhanh hơn
+              và sử dụng tốt những món đã mua. Bạn vẫn có thể thể hiện
+              cá tính bằng màu sắc, phụ kiện hoặc cách phối riêng.
+            </p>
+
+            <a class="cta" href="index.html#collections">
+              Xem bộ sưu tập LUMEN
+            </a>
           </div>
-        </div>
+        </article>
 
-        <p class="catalog-note" id="catalogNote"></p>
-        <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- BỘ SƯU TẬP -->
-    <section class="section cream" id="collections">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Thu Đông 2026</span>
-          <h2>Bộ sưu tập mới</h2>
-          <p>
-            Thanh lịch, thoải mái và linh hoạt:
-            chọn bộ sưu tập phù hợp với nhịp sống của bạn.
-          </p>
-        </div>
-
-        <div class="collection-grid">
-          <article class="collection">
-            <img
-              src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80"
-              alt="Áo khoác trong bộ sưu tập Modern Elegance"
-              loading="lazy">
-            <div class="collection-content">
-              <span class="eyebrow">01 / Thanh lịch</span>
-              <h3>Modern Elegance</h3>
-              <p>
-                Sơ mi, blazer và quần trousers cho những ngày
-                cần một diện mạo chỉn chu.
-              </p>
-              <button class="btn"
-                      onclick="showCollection('Modern Elegance',[1,2,3])">
-                Khám phá bộ sưu tập
-              </button>
-            </div>
-          </article>
-
-          <article class="collection">
-            <img
-              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80"
-              alt="Trang phục Everyday Essentials"
-              loading="lazy">
-            <div class="collection-content">
-              <span class="eyebrow">02 / Hằng ngày</span>
-              <h3>Everyday Essentials</h3>
-              <p>
-                Hoodie, denim và áo polo dễ kết hợp
-                cho những ngày năng động.
-              </p>
-              <button class="btn"
-                      onclick="showCollection('Everyday Essentials',[5,6,8])">
-                Khám phá bộ sưu tập
-              </button>
-            </div>
-          </article>
-
-          <article class="collection">
-            <img
-              src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80"
-              alt="Túi xách Finishing Touch"
-              loading="lazy">
-            <div class="collection-content">
-              <span class="eyebrow">03 / Điểm nhấn</span>
-              <h3>Finishing Touch</h3>
-              <p>
-                Túi xách và kính râm tạo điểm nhấn vừa đủ
-                để hoàn thiện bộ trang phục.
-              </p>
-              <button class="btn"
-                      onclick="showCollection('Finishing Touch',[4,7])">
-                Khám phá bộ sưu tập
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- KHUYẾN MÃI -->
-    <section class="section sale" id="flashsale">
-      <div class="container sale-inner">
-        <div>
-          <span class="eyebrow">Ưu đãi sản phẩm</span>
-          <h2>Hoàn thiện tủ đồ của bạn</h2>
-          <p>Khám phá những món đồ đang có giá ưu đãi tại LUMEN.</p>
-        </div>
-        <button class="btn btn-white" onclick="showSale()">
-          Xem sản phẩm ưu đãi
-        </button>
-      </div>
-    </section>
-
-    <!-- VỀ CHÚNG TÔI -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="about-grid">
+        <!-- BÀI VIẾT 3 -->
+        <article id="cham-soc-ao-so-mi">
           <img
             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=80"
-            alt="Không gian trưng bày thời trang"
-            loading="lazy">
+            alt="Trang phục được treo và sắp xếp trong cửa hàng"
+            width="1100" height="650" loading="lazy">
 
-          <div>
-            <span class="eyebrow">Về LUMEN ATELIER</span>
-            <h2>Vẻ đẹp từ những điều tinh giản</h2>
+          <div class="article-content">
+            <p class="meta">Chăm sóc trang phục · Tác giả: LUMEN ATELIER</p>
+
+            <h2>Cách chăm sóc áo sơ mi để giữ trang phục gọn đẹp</h2>
+
             <p>
-              LUMEN ATELIER hướng đến thời trang ứng dụng dành cho
-              nam và nữ yêu thích phong cách hiện đại. Chúng tôi xem
-              trang phục là cách mỗi người thể hiện cá tính và tự tin
-              trong cuộc sống thường ngày.
+              Cách chăm sóc áo sơ mi phụ thuộc vào chất liệu,
+              cấu trúc vải và hướng dẫn của nhà sản xuất.
+              Trước khi giặt hoặc là, hãy đọc nhãn chăm sóc
+              trên từng chiếc áo thay vì áp dụng một cách
+              cho tất cả sản phẩm.
             </p>
+
+            <h3>Đọc nhãn chăm sóc trước khi giặt</h3>
             <p>
-              Tinh thần thiết kế của LUMEN tập trung vào phom dáng
-              gọn gàng, bảng màu dễ phối và những chi tiết vừa đủ.
-              Từ công sở đến những buổi dạo phố, mỗi lựa chọn đều
-              hướng đến sự linh hoạt trong tủ đồ.
+              Kiểm tra áo có được giặt nước, giặt máy hoặc sấy hay không.
+              Với sản phẩm ghi yêu cầu giặt khô, nên làm theo hướng dẫn.
+              Áo được gọi là “lụa” cũng cần kiểm tra thành phần thực tế
+              trên nhãn để chọn cách chăm sóc phù hợp.
             </p>
-            <a class="btn" href="#collections">Khám phá phong cách LUMEN</a>
+
+            <h3>Phân loại trang phục</h3>
+            <p>
+              Tách đồ sáng màu và đồ đậm màu khi giặt.
+              Kiểm tra túi áo, xử lý vết bẩn theo hướng dẫn sản phẩm
+              và tránh chà mạnh nếu vải dễ bị tổn thương.
+              Không dùng chất tẩy khi nhãn chăm sóc không cho phép.
+            </p>
+
+            <h3>Phơi và là theo hướng dẫn</h3>
+            <p>
+              Nếu áo được phép giặt nước, giũ và chỉnh phom nhẹ
+              trước khi phơi có thể giúp áo gọn hơn.
+              Chọn cách phơi, nhiệt độ là và việc sử dụng hơi nước
+              theo nhãn chăm sóc. Khi chưa chắc chắn, hãy hỏi
+              cửa hàng hoặc đơn vị chăm sóc trang phục.
+            </p>
+
+            <h3>Cất áo khi đã khô hoàn toàn</h3>
+            <p>
+              Sắp xếp áo ở nơi sạch và khô. Có thể treo hoặc gấp
+              tùy theo loại vải và hướng dẫn của sản phẩm.
+              Kiểm tra định kỳ giúp bạn phát hiện sớm vết bẩn,
+              độ ẩm hoặc những chi tiết cần sửa.
+            </p>
+
+            <a class="cta" href="index.html#contact">
+              Liên hệ để được tư vấn sản phẩm
+            </a>
           </div>
-        </div>
-
-        <div class="values">
-          <article class="value">
-            <h3>Sứ mệnh</h3>
-            <p>
-              Mang đến những lựa chọn trang phục dễ ứng dụng,
-              giúp bạn xây dựng phong cách phù hợp với chính mình.
-            </p>
-          </article>
-
-          <article class="value">
-            <h3>Tinh thần thiết kế</h3>
-            <p>
-              Tối giản trong đường nét, hài hòa trong màu sắc
-              và chú trọng cảm giác khi mặc.
-            </p>
-          </article>
-
-          <article class="value">
-            <h3>Đồng hành cùng bạn</h3>
-            <p>
-              Hỗ trợ chọn kiểu dáng, kích cỡ và cách phối để mỗi
-              món đồ trở thành một phần hữu ích trong tủ đồ.
-            </p>
-          </article>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <!-- DẪN ĐẾN BLOG -->
-    <section class="section cream">
-      <div class="container blog-preview">
-        <img
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
-          alt="Gợi ý phối trang phục cho tủ đồ tối giản"
-          loading="lazy">
-        <div>
-          <span class="eyebrow">LUMEN Journal</span>
-          <h2>Mặc đẹp bắt đầu từ những lựa chọn nhỏ</h2>
-          <p class="muted">
-            Đọc những gợi ý phối áo sơ mi, xây dựng tủ đồ tối giản
-            và chăm sóc trang phục tại Blog LUMEN.
-          </p>
-          <a class="btn" href="blog.html">Đọc Blog</a>
-        </div>
-      </div>
-    </section>
+      <!-- MỤC LỤC -->
+      <aside aria-labelledby="tocTitle">
+        <h2 id="tocTitle">Bài viết trong trang</h2>
+        <a href="#phoi-ao-so-mi">Cách phối áo sơ mi đi làm</a>
+        <a href="#tu-do-toi-gian">Xây dựng tủ đồ tối giản</a>
+        <a href="#cham-soc-ao-so-mi">Chăm sóc áo sơ mi</a>
 
-    <!-- LIÊN HỆ -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">LUMEN luôn sẵn sàng lắng nghe</span>
-          <h2>Liên hệ với chúng tôi</h2>
-        </div>
+        <p class="sidebar-note">
+          Khám phá sản phẩm để tìm những món đồ phù hợp
+          với phong cách và nhu cầu của bạn.
+        </p>
 
-        <div class="contact-grid">
-          <div>
-            <h3 style="font-size:27px">Bạn cần hỗ trợ?</h3>
-            <p class="muted">
-              Bạn cần tư vấn sản phẩm, chọn size hay hỗ trợ đơn hàng?
-              Hãy để lại nội dung trong form bên cạnh.
-            </p>
-
-            <!-- Thay bằng thông tin liên hệ thật -->
-            <div class="contact-item">
-              <strong>Địa chỉ cửa hàng</strong>
-              <p>123 Đường Lê Lợi, TP. Hồ Chí Minh</p>
-            </div>
-            <div class="contact-item">
-              <strong>Hotline</strong>
-              <p>1900 8888</p>
-            </div>
-            <div class="contact-item">
-              <strong>Email</strong>
-              <p>cskh@lumenatelier.vn</p>
-            </div>
-            <div class="contact-item">
-              <strong>Giờ hỗ trợ</strong>
-              <p>08:00 – 22:00, từ thứ Hai đến Chủ nhật</p>
-            </div>
-            <p class="form-note">Thông tin liên hệ trên là thông tin mẫu.</p>
-          </div>
-
-          <form class="form-card cream" id="contactForm">
-            <h3>Để lại lời nhắn</h3>
-
-            <div class="form-row">
-              <label>
-                Họ và tên *
-                <input name="name" autocomplete="name"
-                       maxlength="100" required>
-              </label>
-              <label>
-                Email *
-                <input name="email" type="email"
-                       autocomplete="email" required>
-              </label>
-            </div>
-
-            <label>
-              Số điện thoại
-              <input name="phone" type="tel" autocomplete="tel"
-                     pattern="[0-9+(). -]{9,16}"
-                     placeholder="Không bắt buộc">
-            </label>
-
-            <label>
-              Chủ đề
-              <select name="subject">
-                <option>Tư vấn sản phẩm và kích cỡ</option>
-                <option>Hỗ trợ đơn hàng</option>
-                <option>Đổi trả sản phẩm</option>
-                <option>Hợp tác kinh doanh</option>
-                <option>Nội dung khác</option>
-              </select>
-            </label>
-
-            <label>
-              Nội dung *
-              <textarea name="message" rows="4"
-                        minlength="10" maxlength="3000"
-                        placeholder="Nhập ít nhất 10 ký tự."
-                        required></textarea>
-            </label>
-
-            <p class="form-note">
-              Form demo chỉ kiểm tra thông tin, chưa gửi yêu cầu.
-            </p>
-            <button class="btn">Kiểm tra yêu cầu</button>
-            <p id="contactStatus" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ĐĂNG KÝ EMAIL -->
-    <section class="section cream newsletter">
-      <div class="container">
-        <span class="eyebrow">LUMEN CLUB</span>
-        <h2>Nhận tin từ LUMEN</h2>
-        <p class="muted">Cập nhật bộ sưu tập và ưu đãi mới.</p>
-
-        <form id="newsletterForm">
-          <input type="email" placeholder="Email của bạn..."
-                 aria-label="Email đăng ký nhận tin" required>
-          <button class="btn">Đăng ký</button>
-        </form>
-
-        <p class="form-note">Đăng ký email hiện là chức năng demo.</p>
-      </div>
-    </section>
+        <a class="cta" href="index.html#products">Xem sản phẩm</a>
+      </aside>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">LUMEN ATELIER</div>
-          <p>
-            Thời trang ứng dụng dành cho phong cách sống hiện đại.
-            Thanh lịch, tinh giản và mang dấu ấn riêng.
-          </p>
-        </div>
-
-        <div>
-          <h3>Khám phá</h3>
-          <a href="#products" onclick="resetCatalog()">Sản phẩm</a>
-          <a href="#collections">Bộ sưu tập mới</a>
-          <a href="#about">Về chúng tôi</a>
-          <a href="blog.html">Blog thời trang</a>
-        </div>
-
-        <div>
-          <h3>Hỗ trợ</h3>
-          <a href="#contact">Liên hệ</a>
-          <a href="#contact">Tư vấn chọn size</a>
-          <a href="#contact">Vận chuyển và đổi trả</a>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © <span id="year"></span> LUMEN ATELIER.
-        Website mẫu, chưa kết nối xử lý giao dịch.
-      </div>
+      <strong>LUMEN ATELIER</strong>
+      <p>Gợi ý thời trang cho phong cách sống hiện đại.</p>
+      <a href="index.html">Về trang chủ</a>
     </div>
   </footer>
-
-  <!-- CHI TIẾT SẢN PHẨM -->
-  <dialog id="productModal" aria-labelledby="detailTitle">
-    <div class="dialog-head">
-      <h2 id="detailTitle">Chi tiết sản phẩm</h2>
-      <button class="close-btn" data-close aria-label="Đóng">×</button>
-    </div>
-    <div id="productDetail"></div>
-  </dialog>
-
-  <!-- GIỎ HÀNG -->
-  <dialog id="cartModal" aria-labelledby="cartTitle">
-    <div class="dialog-head">
-      <h2 id="cartTitle">Giỏ hàng</h2>
-      <button class="close-btn" data-close aria-label="Đóng">×</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      <span>Tạm tính</span>
-      <span id="cartTotal">0đ</span>
-    </div>
-
-    <p class="form-note">
-      Phí vận chuyển sẽ được xác nhận khi xử lý đơn.
-    </p>
-
-    <button class="btn wide" id="checkoutBtn" onclick="showCheckout()">
-      Tiến hành đặt hàng
-    </button>
-  </dialog>
-
-  <!-- ĐẶT HÀNG -->
-  <dialog id="checkoutModal" aria-labelledby="checkoutTitle">
-    <div class="dialog-head">
-      <h2 id="checkoutTitle">Thông tin đặt hàng</h2>
-      <button class="close-btn" data-close aria-label="Đóng">×</button>
-    </div>
-
-    <form id="checkoutForm">
-      <label>
-        Họ và tên *
-        <input name="name" autocomplete="name" required>
-      </label>
-      <label>
-        Số điện thoại *
-        <input name="phone" type="tel" autocomplete="tel"
-               pattern="[0-9+(). -]{9,16}" required>
-      </label>
-      <label>
-        Địa chỉ nhận hàng *
-        <input name="address" autocomplete="street-address" required>
-      </label>
-      <label>
-        Phương thức thanh toán
-        <select name="payment">
-          <option>Thanh toán khi nhận hàng – demo</option>
-        </select>
-      </label>
-      <label>
-        Ghi chú
-        <textarea name="note" rows="3"></textarea>
-      </label>
-      <p class="form-note">
-        Đây là đơn hàng mẫu. Website chưa gửi đơn và chưa thu tiền.
-      </p>
-      <button class="btn wide">Xác nhận đơn hàng mẫu</button>
-    </form>
-  </dialog>
-
-  <div class="toast" id="toast"
-       role="status" aria-live="polite" hidden></div>
-
-  <script>
-    // Dữ liệu mẫu: có thể sửa tên, giá, ảnh tại đây.
-    const products = [
-      {
-        id: 1,
-        name: "Áo Sơ Mi Lụa Silk Premium",
-        category: "Ao",
-        price: 790000,
-        oldPrice: 990000,
-        tag: "Mới",
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=800&q=80",
-        description: "Áo sơ mi thanh lịch, dễ phối cùng quần trousers hoặc denim."
-      },
-      {
-        id: 2,
-        name: "Áo Blazer Oversize",
-        category: "Ao",
-        price: 1290000,
-        oldPrice: 1590000,
-        tag: "Nổi bật",
-        sizes: ["S", "M", "L"],
-        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80",
-        description: "Blazer phom rộng cho phong cách hiện đại và chỉn chu."
-      },
-      {
-        id: 3,
-        name: "Quần Trousers Thanh Lịch",
-        category: "Quan",
-        price: 690000,
-        oldPrice: 850000,
-        tag: "Ưu đãi",
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80",
-        description: "Quần trousers dễ phối cho những ngày đi làm hoặc gặp gỡ."
-      },
-      {
-        id: 4,
-        name: "Túi Xách Minimal",
-        category: "PhuKien",
-        price: 950000,
-        oldPrice: 1200000,
-        tag: "Nổi bật",
-        sizes: ["One size"],
-        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80",
-        description: "Túi xách tạo điểm nhấn tinh tế cho bộ trang phục."
-      },
-      {
-        id: 5,
-        name: "Áo Hoodie Heavyweight Cotton",
-        category: "Ao",
-        price: 650000,
-        oldPrice: 800000,
-        tag: "Mới",
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
-        description: "Hoodie phom thoải mái cho những ngày năng động."
-      },
-      {
-        id: 6,
-        name: "Quần Denim Straight Vintage",
-        category: "Quan",
-        price: 820000,
-        oldPrice: 990000,
-        tag: "Nổi bật",
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
-        description: "Quần denim ống đứng dễ kết hợp với áo thun và sơ mi."
-      },
-      {
-        id: 7,
-        name: "Kính Râm Unisex Frame Đen",
-        category: "PhuKien",
-        price: 390000,
-        oldPrice: 550000,
-        tag: "Ưu đãi",
-        sizes: ["One size"],
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
-        description: "Phụ kiện hoàn thiện phong cách dạo phố."
-      },
-      {
-        id: 8,
-        name: "Áo Len Polo Dệt Kim",
-        category: "Ao",
-        price: 890000,
-        oldPrice: 1200000,
-        tag: "Nổi bật",
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80",
-        description: "Áo polo dệt kim thanh lịch và dễ ứng dụng."
-      }
-    ];
-
-    const $ = selector => document.querySelector(selector);
-
-    const money = value =>
-      new Intl.NumberFormat("vi-VN", {
-        style: "currency",
-        currency: "VND"
-      }).format(value);
-
-    const categoryNames = {
-      Ao: "Áo",
-      Quan: "Quần",
-      PhuKien: "Phụ kiện"
-    };
-
-    // Escape nội dung trước khi chèn vào HTML.
-    function escapeHTML(value) {
-      const replacements = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-      };
-
-      return String(value).replace(
-        /[&<>"']/g,
-        character => replacements[character]
-      );
-    }
-
-    function readStorage(key) {
-      try {
-        const value = JSON.parse(localStorage.getItem(key));
-        return Array.isArray(value) ? value : [];
-      } catch {
-        return [];
-      }
-    }
-
-    let cart = readStorage("lumen-cart").filter(item => {
-      const product = products.find(p => p.id === item?.id);
-
-      return product &&
-        product.sizes.includes(item.size) &&
-        Number.isInteger(item.quantity) &&
-        item.quantity > 0 &&
-        item.quantity <= 99;
-    });
-
-    let wishlist = [
-      ...new Set(
-        readStorage("lumen-wishlist").filter(id =>
-          products.some(product => product.id === id)
-        )
-      )
-    ];
-
-    let currentCategory = "all";
-    let collectionIds = null;
-    let collectionName = "";
-    let favoritesOnly = false;
-    let saleOnly = false;
-    let activeProductId = null;
-    let selectedSize = null;
-    let toastTimer;
-
-    function updateCounts() {
-      $("#cartCount").textContent =
-        cart.reduce((total, item) => total + item.quantity, 0);
-
-      $("#wishlistCount").textContent = wishlist.length;
-    }
-
-    function persist() {
-      try {
-        localStorage.setItem("lumen-cart", JSON.stringify(cart));
-        localStorage.setItem("lumen-wishlist", JSON.stringify(wishlist));
-      } catch {
-        // Vẫn sử dụng được nếu trình duyệt chặn lưu trữ.
-      }
-
-      updateCounts();
-    }
-
-    function showToast(message) {
-      clearTimeout(toastTimer);
-      $("#toast").textContent = message;
-      $("#toast").hidden = false;
-
-      toastTimer = setTimeout(() => {
-        $("#toast").hidden = true;
-      }, 3500);
-    }
-
-    function normalize(text) {
-      return text.toLocaleLowerCase("vi")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d");
-    }
-
-    // ================= SẢN PHẨM =================
-    function renderProducts() {
-      const query = normalize($("#searchInput").value.trim());
-
-      let list = products.filter(product =>
-        (currentCategory === "all" ||
-          product.category === currentCategory) &&
-        (!collectionIds || collectionIds.includes(product.id)) &&
-        (!favoritesOnly || wishlist.includes(product.id)) &&
-        (!saleOnly || product.oldPrice > product.price) &&
-        normalize(product.name).includes(query)
-      );
-
-      if ($("#sortSelect").value === "asc") {
-        list.sort((a, b) => a.price - b.price);
-      }
-
-      if ($("#sortSelect").value === "desc") {
-        list.sort((a, b) => b.price - a.price);
-      }
-
-      document.querySelectorAll("[data-category]").forEach(button => {
-        const active = button.dataset.category === currentCategory;
-        button.classList.toggle("active", active);
-        button.setAttribute("aria-pressed", String(active));
-      });
-
-      const notes = [];
-
-      if (collectionName) notes.push("Bộ sưu tập: " + collectionName);
-      if (favoritesOnly) notes.push("Sản phẩm yêu thích");
-      if (saleOnly) notes.push("Sản phẩm ưu đãi");
-
-      notes.push(list.length + " sản phẩm");
-      $("#catalogNote").textContent = notes.join(" · ");
-
-      $("#productGrid").innerHTML = list.length
-        ? list.map(product => {
-          const saved = wishlist.includes(product.id);
-          const name = escapeHTML(product.name);
-
-          return `
-            <article class="product-card">
-              <div class="product-photo">
-                <button class="image-btn"
-                        onclick="openProduct(${product.id})"
-                        aria-label="Xem ${name}">
-                  <img src="${escapeHTML(product.image)}"
-                       alt="${name}" loading="lazy">
-                </button>
-
-                <span class="tag">${escapeHTML(product.tag)}</span>
-
-                <button class="heart ${saved ? "saved" : ""}"
-                        onclick="toggleWishlist(${product.id})"
-                        aria-label="${saved ? "Bỏ yêu thích" : "Yêu thích"} ${name}"
-                        aria-pressed="${saved}">
-                  ${saved ? "♥" : "♡"}
-                </button>
-              </div>
-
-              <div class="product-info">
-                <small>${categoryNames[product.category]}</small>
-                <h3>
-                  <button class="product-name"
-                          onclick="openProduct(${product.id})">
-                    ${name}
-                  </button>
-                </h3>
-                <span class="price">${money(product.price)}</span>
-                <span class="old-price">${money(product.oldPrice)}</span>
-              </div>
-
-              <button class="btn btn-outline"
-                      onclick="openProduct(${product.id})">
-                Chọn size và thêm vào giỏ
-              </button>
-            </article>
-          `;
-        }).join("")
-        : `
-          <p class="empty">
-            Không tìm thấy sản phẩm phù hợp.
-            Hãy thử từ khóa hoặc danh mục khác.
-          </p>
-        `;
-    }
-
-    function resetCatalog() {
-      currentCategory = "all";
-      collectionIds = null;
-      collectionName = "";
-      favoritesOnly = false;
-      saleOnly = false;
-      $("#searchInput").value = "";
-      $("#sortSelect").value = "default";
-      renderProducts();
-    }
-
-    function scrollToProducts() {
-      $("#products").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function selectCategory(category) {
-      resetCatalog();
-      currentCategory = category;
-      renderProducts();
-      scrollToProducts();
-    }
-
-    function showCollection(name, ids) {
-      resetCatalog();
-      collectionName = name;
-      collectionIds = ids;
-      renderProducts();
-      scrollToProducts();
-    }
-
-    function showFavorites() {
-      resetCatalog();
-      favoritesOnly = true;
-      renderProducts();
-      scrollToProducts();
-    }
-
-    function showSale() {
-      resetCatalog();
-      saleOnly = true;
-      renderProducts();
-      scrollToProducts();
-    }
-
-    function focusSearch() {
-      resetCatalog();
-      scrollToProducts();
-      $("#searchInput").focus({ preventScroll: true });
-    }
-
-    function toggleWishlist(id) {
-      if (wishlist.includes(id)) {
-        wishlist = wishlist.filter(item => item !== id);
-        showToast("Đã bỏ sản phẩm khỏi danh sách yêu thích.");
-      } else {
-        wishlist.push(id);
-        showToast("Đã thêm sản phẩm vào danh sách yêu thích.");
-      }
-
-      persist();
-      renderProducts();
-    }
-
-    // ================= HỘP THOẠI =================
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal.open) modal.showModal();
-    }
-
-    document.querySelectorAll("dialog").forEach(modal => {
-      modal.querySelectorAll("[data-close]").forEach(button => {
-        button.addEventListener("click", () => modal.close());
-      });
-
-      modal.addEventListener("click", event => {
-        const rect = modal.getBoundingClientRect();
-
-        const outside =
-          event.clientX < rect.left ||
-          event.clientX > rect.right ||
-          event.clientY < rect.top ||
-          event.clientY > rect.bottom;
-
-        if (event.target === modal && outside) modal.close();
-      });
-    });
-
-    // ================= CHI TIẾT =================
-    function openProduct(id) {
-      const product = products.find(item => item.id === id);
-      if (!product) return;
-
-      activeProductId = id;
-      selectedSize = null;
-      $("#detailTitle").textContent = product.name;
-
-      $("#productDetail").innerHTML = `
-        <div class="detail-grid">
-          <img src="${escapeHTML(product.image)}"
-               alt="${escapeHTML(product.name)}">
-
-          <div>
-            <span class="eyebrow">
-              ${categoryNames[product.category]}
-            </span>
-
-            <p>
-              <span class="price">${money(product.price)}</span>
-              <span class="old-price">${money(product.oldPrice)}</span>
-            </p>
-
-            <p class="muted">${escapeHTML(product.description)}</p>
-
-            <strong>Chọn kích cỡ</strong>
-
-            <div class="sizes" role="group" aria-label="Kích cỡ">
-              ${product.sizes.map(size => `
-                <button class="size" type="button"
-                        data-size="${escapeHTML(size)}"
-                        aria-pressed="false">
-                  ${escapeHTML(size)}
-                </button>
-              `).join("")}
-            </div>
-
-            <p class="form-note">
-              Liên hệ LUMEN để được tư vấn kích cỡ phù hợp.
-            </p>
-
-            <button class="btn wide" onclick="addToCart()">
-              Thêm vào giỏ hàng
-            </button>
-          </div>
-        </div>
-      `;
-
-      $("#productDetail").querySelectorAll("[data-size]").forEach(button => {
-        button.addEventListener("click", () => {
-          selectedSize = button.dataset.size;
-
-          $("#productDetail").querySelectorAll("[data-size]").forEach(item => {
-            const active = item === button;
-            item.classList.toggle("selected", active);
-            item.setAttribute("aria-pressed", String(active));
-          });
-        });
-      });
-
-      openModal("productModal");
-    }
-
-    // ================= GIỎ HÀNG =================
-    function addToCart() {
-      if (!selectedSize) {
-        showToast("Bạn chọn kích cỡ trước nhé.");
-        return;
-      }
-
-      const existing = cart.find(item =>
-        item.id === activeProductId && item.size === selectedSize
-      );
-
-      if (existing) {
-        if (existing.quantity >= 99) {
-          showToast("Tối đa 99 sản phẩm cho mỗi kích cỡ.");
-          return;
-        }
-        existing.quantity++;
-      } else {
-        cart.push({
-          id: activeProductId,
-          size: selectedSize,
-          quantity: 1
-        });
-      }
-
-      persist();
-      $("#productModal").close();
-      showToast("Đã thêm sản phẩm vào giỏ hàng.");
-    }
-
-    function renderCart() {
-      $("#cartItems").innerHTML = cart.length
-        ? cart.map((item, index) => {
-          const product = products.find(p => p.id === item.id);
-
-          return `
-            <div class="cart-item">
-              <img src="${escapeHTML(product.image)}"
-                   alt="${escapeHTML(product.name)}">
-
-              <div>
-                <strong>${escapeHTML(product.name)}</strong>
-                <p class="muted">Size: ${escapeHTML(item.size)}</p>
-                <p class="price">${money(product.price)}</p>
-
-                <div class="qty">
-                  <button onclick="changeQuantity(${index}, -1)"
-                          aria-label="Giảm số lượng">−</button>
-                  <span>${item.quantity}</span>
-                  <button onclick="changeQuantity(${index}, 1)"
-                          aria-label="Tăng số lượng">+</button>
-                </div>
-              </div>
-
-              <button class="remove-btn"
-                      onclick="removeCartItem(${index})">
-                Xóa
-              </button>
-            </div>
-          `;
-        }).join("")
-        : '<p class="empty">Giỏ hàng của bạn đang trống.</p>';
-
-      const total = cart.reduce((sum, item) => {
-        const product = products.find(p => p.id === item.id);
-        return sum + product.price * item.quantity;
-      }, 0);
-
-      $("#cartTotal").textContent = money(total);
-      $("#checkoutBtn").disabled = cart.length === 0;
-    }
-
-    function showCart() {
-      renderCart();
-      openModal("cartModal");
-    }
-
-    function changeQuantity(index, delta) {
-      if (!cart[index]) return;
-
-      const next = cart[index].quantity + delta;
-      if (next > 99) return;
-
-      if (next <= 0) cart.splice(index, 1);
-      else cart[index].quantity = next;
-
-      persist();
-      renderCart();
-    }
-
-    function removeCartItem(index) {
-      cart.splice(index, 1);
-      persist();
-      renderCart();
-    }
-
-    function showCheckout() {
-      if (!cart.length) return;
-      $("#cartModal").close();
-      openModal("checkoutModal");
-    }
-
-    $("#checkoutForm").addEventListener("submit", event => {
-      event.preventDefault();
-      if (!cart.length) return;
-
-      cart = [];
-      persist();
-      renderCart();
-      event.target.reset();
-      $("#checkoutModal").close();
-
-      showToast(
-        "Đã hoàn tất đơn hàng mẫu. Chưa có đơn được gửi hoặc tiền được thu."
-      );
-    });
-
-    // ================= FORM =================
-    $("#contactForm").addEventListener("submit", event => {
-      event.preventDefault();
-
-      $("#contactStatus").textContent =
-        "Thông tin hợp lệ. Đây là bản demo nên yêu cầu chưa được gửi.";
-    });
-
-    $("#newsletterForm").addEventListener("submit", event => {
-      event.preventDefault();
-      event.target.reset();
-      showToast("Cảm ơn bạn! Bản demo chưa gửi email đăng ký.");
-    });
-
-    // ================= MENU =================
-    $("#menuBtn").addEventListener("click", () => {
-      const open = $("#mainNav").classList.toggle("open");
-      $("#menuBtn").setAttribute("aria-expanded", String(open));
-    });
-
-    $("#mainNav").querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        $("#mainNav").classList.remove("open");
-        $("#menuBtn").setAttribute("aria-expanded", "false");
-      });
-    });
-
-    // ================= TÌM KIẾM =================
-    document.querySelectorAll("[data-category]").forEach(button => {
-      button.addEventListener("click", () => {
-        currentCategory = button.dataset.category;
-        renderProducts();
-      });
-    });
-
-    $("#searchInput").addEventListener("input", renderProducts);
-    $("#sortSelect").addEventListener("change", renderProducts);
-
-    $("#year").textContent = new Date().getFullYear();
-    updateCounts();
-    renderProducts();
-  </script>
 </body>
 </html>
