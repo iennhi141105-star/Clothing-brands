@@ -5,15 +5,16 @@
     <meta name="google-site-verification" content="BLv1Z8i32uHFH-6caFXvwHD2ns7RwN3ZefwoIyhT4r0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumen Atelier | High-End Sustainable Fashion</title>
+    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM7WF1YS05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MM7WF1YS05"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MM7WF1YS05');
+    </script>
 
-  gtag('config', 'G-MM7WF1YS05');
-</script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -79,6 +80,12 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-atelier-dark selection:text-atelier-bg">
 
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-atelier-dark text-white px-5 py-3 rounded shadow-lg text-xs tracking-wider z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 border border-atelier-gold">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-atelier-gold text-base"></i>
+        <span id="toast-msg">Thông báo</span>
+    </div>
+
     <!-- Top Announcement Bar -->
     <div class="bg-atelier-dark text-atelier-bg text-xs tracking-widest uppercase py-2 px-4 text-center font-light z-50">
         <span>Miễn Phí Vận Chuyển Cho Đơn Hàng Từ 2.000.000đ | Mã "LUMEN10" Giảm 10% Đơn Đầu Tiên</span>
@@ -88,7 +95,7 @@
     <header class="sticky top-0 z-40 bg-atelier-bg/90 backdrop-blur-md border-b border-atelier-sand transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" class="lg:hidden text-atelier-dark p-2 hover:text-atelier-muted focus:outline-none" aria-label="Toggle Navigation">
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-atelier-dark p-2 hover:text-atelier-muted focus:outline-none" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
 
@@ -431,202 +438,124 @@
         </section>
 
         <!-- 5. CONTACT PAGE VIEW -->
-        <section id="page-contact" class="page-view py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="page-contact" class="page-view py-12 max-w-5xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <h1 class="font-serif text-3xl font-normal mb-2">Liên Hệ Với Chúng Tôi</h1>
-                <p class="text-xs text-atelier-muted">Đội ngũ chăm sóc khách hàng Atelier luôn sẵn sàng hỗ trợ bạn 24/7</p>
+                <h1 class="font-serif text-3xl font-normal mb-2">Liên Hệ Với Lumen Atelier</h1>
+                <p class="text-xs text-atelier-muted">Đội ngũ chăm sóc khách hàng của chúng tôi luôn sẵn sàng hỗ trợ bạn</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-white p-8 border border-atelier-sand shadow-sm">
-                    <h2 class="font-serif text-xl mb-6">Gửi Tin Nhắn</h2>
-                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Họ & Tên *</label>
-                            <input type="text" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Email *</label>
-                            <input type="email" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Số điện thoại</label>
-                            <input type="tel" class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Nội dung tin nhắn *</label>
-                            <textarea rows="4" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Gửi Liên Hệ</button>
-                    </form>
-                </div>
-
-                <!-- Showroom Info -->
-                <div class="space-y-8">
-                    <div>
-                        <h2 class="font-serif text-xl mb-4">Hệ Thống Showroom</h2>
-                        <div class="space-y-6">
-                            <!-- Flagship 1 -->
-                            <div class="p-4 bg-atelier-card border border-atelier-sand">
-                                <h3 class="font-semibold text-sm mb-1">Flagship Store TP. Hồ Chí Minh</h3>
-                                <p class="text-xs text-atelier-muted mb-2"><i class="fa-solid fa-location-dot mr-2"></i>152 Đồng Khởi, Phường Bến Nghé, Quận 1, TP.HCM</p>
-                                <p class="text-xs text-atelier-muted mb-2"><i class="fa-solid fa-phone mr-2"></i>028 3822 9999</p>
-                                <p class="text-xs text-atelier-muted"><i class="fa-solid fa-clock mr-2"></i>09:00 - 21:30 (Mỗi ngày)</p>
-                            </div>
-                            <!-- Flagship 2 -->
-                            <div class="p-4 bg-atelier-card border border-atelier-sand">
-                                <h3 class="font-semibold text-sm mb-1">Boutique Hà Nội</h3>
-                                <p class="text-xs text-atelier-muted mb-2"><i class="fa-solid fa-location-dot mr-2"></i>42 Tràng Tiền, Quận Hoàn Kiếm, Hà Nội</p>
-                                <p class="text-xs text-atelier-muted mb-2"><i class="fa-solid fa-phone mr-2"></i>024 3933 8888</p>
-                                <p class="text-xs text-atelier-muted"><i class="fa-solid fa-clock mr-2"></i>09:00 - 21:30 (Mỗi ngày)</p>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Info -->
+                <div class="space-y-6 text-xs text-atelier-dark">
+                    <div class="bg-atelier-card p-6 border border-atelier-sand space-y-4">
+                        <h3 class="font-serif text-lg font-medium">Showroom Flagship</h3>
+                        <p><i class="fa-solid fa-location-dot text-atelier-gold mr-2"></i> 152 Nguyễn Trãi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</p>
+                        <p><i class="fa-solid fa-phone text-atelier-gold mr-2"></i> Hotlines: 0908 123 456 / 028 3822 9999</p>
+                        <p><i class="fa-solid fa-envelope text-atelier-gold mr-2"></i> Email: contact@lumenatelier.vn</p>
+                        <p><i class="fa-solid fa-clock text-atelier-gold mr-2"></i> Mở cửa: 09:00 - 21:30 (Hàng ngày)</p>
                     </div>
 
-                    <!-- FAQ preview -->
-                    <div>
-                        <h3 class="font-serif text-lg mb-3">Câu Hỏi Thường Gặp (FAQ)</h3>
-                        <div class="space-y-2 text-xs text-atelier-muted">
-                            <details class="bg-white p-3 border border-atelier-sand cursor-pointer">
-                                <summary class="font-medium text-atelier-dark">Thời gian giao hàng mất bao lâu?</summary>
-                                <p class="mt-2">Nội thành TP.HCM & Hà Nội: 1-2 ngày. Các tỉnh thành khác: 3-5 ngày làm việc.</p>
-                            </details>
-                            <details class="bg-white p-3 border border-atelier-sand cursor-pointer">
-                                <summary class="font-medium text-atelier-dark">Chính sách đổi trả sản phẩm ra sao?</summary>
-                                <p class="mt-2">Đổi hàng miễn phí trong vòng 7 ngày kể từ ngày nhận hàng với nguyên tem mác.</p>
-                            </details>
-                        </div>
+                    <div class="bg-atelier-card p-6 border border-atelier-sand">
+                        <h3 class="font-serif text-lg font-medium mb-2">Dịch Vụ May Đo Trực Tiếp</h3>
+                        <p class="text-atelier-muted leading-relaxed">
+                            Quý khách có nhu cầu đặt may đo riêng cho sự kiện đặc biệt vui lòng liên hệ hẹn lịch trước ít nhất 3 ngày làm việc.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Form -->
+                <form onsubmit="handleContactSubmit(event)" class="bg-white p-6 border border-atelier-sand space-y-4">
+                    <h3 class="font-serif text-lg font-medium mb-2">Gửi Tin Nhắn</h3>
+                    <div>
+                        <label class="block text-xs uppercase text-atelier-muted mb-1">Họ và tên *</label>
+                        <input type="text" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-atelier-muted mb-1">Email *</label>
+                        <input type="email" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-atelier-muted mb-1">Số điện thoại</label>
+                        <input type="tel" class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-atelier-muted mb-1">Nội dung *</label>
+                        <textarea rows="4" required class="w-full p-2.5 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none focus:border-atelier-dark"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Gửi Thông Tin</button>
+                </form>
             </div>
         </section>
 
         <!-- 6. WISHLIST PAGE VIEW -->
         <section id="page-wishlist" class="page-view py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="font-serif text-3xl font-normal mb-2">Sản Phẩm Yêu Thích</h1>
-            <p class="text-xs text-atelier-muted mb-8">Danh sách các sản phẩm bạn đã lưu</p>
-
-            <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Dynamic Content -->
+            <div class="text-center mb-10">
+                <h1 class="font-serif text-3xl font-medium mb-2">Danh Sách Yêu Thích</h1>
+                <p class="text-xs text-atelier-muted">Các thiết kế bạn đã lưu lại để tham khảo</p>
             </div>
-            <div id="wishlist-empty" class="hidden text-center py-16 bg-white border border-atelier-sand">
-                <i class="fa-regular fa-heart text-4xl text-atelier-muted mb-3"></i>
-                <p class="text-sm font-medium mb-4">Danh sách yêu thích của bạn đang trống</p>
-                <button onclick="navigateTo('shop')" class="px-6 py-2.5 bg-atelier-dark text-white text-xs uppercase tracking-widest">Khám Phá Sản Phẩm</button>
+            <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamically Rendered -->
             </div>
         </section>
 
         <!-- 7. CART & CHECKOUT PAGE VIEW -->
-        <section id="page-cart" class="page-view py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="font-serif text-3xl font-normal mb-2">Giỏ Hàng & Thanh Toán</h1>
-            <p class="text-xs text-atelier-muted mb-8">Kiểm tra lại danh sách đơn hàng và hoàn tất thanh toán an toàn</p>
+        <section id="page-cart" class="page-view py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="font-serif text-3xl font-medium mb-8 pb-4 border-b border-atelier-sand">Giỏ Hàng & Thanh Toán</h1>
+            
+            <div id="cart-empty-view" class="hidden text-center py-16 space-y-4">
+                <i class="fa-solid fa-bag-shopping text-4xl text-atelier-muted"></i>
+                <p class="text-sm text-atelier-muted">Giỏ hàng của bạn đang trống.</p>
+                <button onclick="navigateTo('shop')" class="px-6 py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Khám Phá Sản Phẩm</button>
+            </div>
 
-            <div id="cart-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Cart Items List (8 cols) -->
-                <div class="lg:col-span-7 space-y-6">
-                    <!-- Free Shipping Bar -->
-                    <div class="bg-atelier-card p-4 border border-atelier-sand text-xs">
-                        <div class="flex justify-between mb-1">
-                            <span id="freeship-text">Mua thêm để được FreeShip</span>
-                            <span id="freeship-percent" class="font-semibold">0%</span>
-                        </div>
-                        <div class="w-full bg-atelier-sand h-1.5 rounded-full overflow-hidden">
-                            <div id="freeship-bar" class="bg-atelier-gold h-full w-0 transition-all duration-500"></div>
-                        </div>
-                    </div>
-
-                    <!-- Cart Table/List -->
-                    <div id="cart-items-list" class="space-y-4">
-                        <!-- Filled by JS -->
-                    </div>
-
-                    <!-- Empty Cart Message -->
-                    <div id="cart-empty" class="hidden text-center py-16 bg-white border border-atelier-sand">
-                        <i class="fa-solid fa-bag-shopping text-4xl text-atelier-muted mb-3"></i>
-                        <p class="text-sm font-medium mb-4">Giỏ hàng của bạn chưa có sản phẩm nào</p>
-                        <button onclick="navigateTo('shop')" class="px-6 py-2.5 bg-atelier-dark text-white text-xs uppercase tracking-widest">Tiếp Tục Mua Sắm</button>
+            <div id="cart-content-view" class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Cart Items List -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div id="cart-items-container" class="space-y-4">
+                        <!-- Rendered via JS -->
                     </div>
                 </div>
 
-                <!-- Checkout Form & Order Summary (5 cols) -->
-                <div id="cart-summary-box" class="lg:col-span-5 bg-white p-6 border border-atelier-sand h-fit space-y-6">
-                    <h2 class="font-serif text-xl border-b border-atelier-sand pb-3">Thông Tin Đơn Hàng</h2>
-
-                    <!-- Promo Code input -->
-                    <div>
-                        <label class="block text-xs uppercase text-atelier-muted mb-1">Mã Giảm Giá</label>
-                        <div class="flex gap-2">
-                            <input type="text" id="coupon-input" placeholder="LUMEN10 hoặc VIP20" class="flex-grow p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none uppercase">
-                            <button onclick="applyCoupon()" class="px-4 py-2 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Áp dụng</button>
+                <!-- Order Summary & Checkout Form -->
+                <div class="bg-atelier-card p-6 border border-atelier-sand h-fit space-y-6">
+                    <h2 class="font-serif text-xl font-medium border-b border-atelier-sand pb-3">Tóm Tắt Đơn Hàng</h2>
+                    
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-atelier-muted">Tạm tính:</span>
+                            <span id="cart-subtotal" class="font-semibold">0đ</span>
                         </div>
-                        <p id="coupon-msg" class="text-[11px] mt-1 hidden"></p>
+                        <div class="flex justify-between">
+                            <span class="text-atelier-muted">Phí vận chuyển:</span>
+                            <span id="cart-shipping" class="font-semibold">0đ</span>
+                        </div>
+                        <div id="discount-row" class="flex justify-between text-emerald-700 hidden">
+                            <span>Giảm giá (LUMEN10):</span>
+                            <span id="cart-discount">-0đ</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-serif font-bold pt-3 border-t border-atelier-sand text-atelier-dark">
+                            <span>Tổng cộng:</span>
+                            <span id="cart-total" class="text-atelier-gold">0đ</span>
+                        </div>
                     </div>
 
-                    <!-- Shipping Form -->
-                    <form id="checkout-form" onsubmit="handleCheckout(event)" class="space-y-3 pt-2">
-                        <h3 class="text-xs uppercase tracking-widest font-semibold text-atelier-muted">Địa Chỉ Giao Hàng</h3>
-                        <div>
-                            <input type="text" id="cust-name" required placeholder="Họ và tên *" class="w-full p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none">
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="tel" id="cust-phone" required placeholder="Số điện thoại *" class="w-full p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none">
-                            <input type="email" id="cust-email" required placeholder="Email *" class="w-full p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none">
-                        </div>
-                        <div>
-                            <input type="text" id="cust-address" required placeholder="Địa chỉ giao hàng *" class="w-full p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none">
-                        </div>
-                        <div>
-                            <select id="cust-city" class="w-full p-2 text-xs bg-atelier-bg border border-atelier-sand focus:outline-none">
-                                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-                                <option value="Hà Nội">Hà Nội</option>
-                                <option value="Đà Nẵng">Đà Nẵng</option>
-                                <option value="Khác">Tỉnh / Thành phố khác</option>
-                            </select>
-                        </div>
+                    <!-- Promo Code -->
+                    <div class="flex gap-2">
+                        <input type="text" id="promo-code-input" placeholder="Mã giảm giá (LUMEN10)" class="w-full p-2 text-xs bg-white border border-atelier-sand uppercase focus:outline-none">
+                        <button onclick="applyPromoCode()" class="px-4 py-2 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Áp dụng</button>
+                    </div>
 
-                        <!-- Payment Methods -->
-                        <div class="pt-3">
-                            <h3 class="text-xs uppercase tracking-widest font-semibold text-atelier-muted mb-2">Phương Thức Thanh Toán</h3>
-                            <div class="space-y-2 text-xs">
-                                <label class="flex items-center gap-2 p-2.5 border border-atelier-sand cursor-pointer bg-atelier-bg">
-                                    <input type="radio" name="payment-method" value="COD" checked class="accent-atelier-dark">
-                                    <span><i class="fa-solid fa-truck-fast mr-1"></i> Thanh toán khi nhận hàng (COD)</span>
-                                </label>
-                                <label class="flex items-center gap-2 p-2.5 border border-atelier-sand cursor-pointer bg-atelier-bg">
-                                    <input type="radio" name="payment-method" value="BANK" class="accent-atelier-dark">
-                                    <span><i class="fa-solid fa-qrcode mr-1"></i> Chuyển khoản QR Banking / Momo</span>
-                                </label>
-                                <label class="flex items-center gap-2 p-2.5 border border-atelier-sand cursor-pointer bg-atelier-bg">
-                                    <input type="radio" name="payment-method" value="CARD" class="accent-atelier-dark">
-                                    <span><i class="fa-regular fa-credit-card mr-1"></i> Thẻ Visa / Mastercard</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Cost Breakdown -->
-                        <div class="border-t border-atelier-sand pt-4 space-y-2 text-xs">
-                            <div class="flex justify-between text-atelier-muted">
-                                <span>Tạm tính:</span>
-                                <span id="summary-subtotal">0đ</span>
-                            </div>
-                            <div id="discount-row" class="flex justify-between text-emerald-700 hidden">
-                                <span>Giảm giá:</span>
-                                <span id="summary-discount">-0đ</span>
-                            </div>
-                            <div class="flex justify-between text-atelier-muted">
-                                <span>Phí vận chuyển:</span>
-                                <span id="summary-shipping">30.000đ</span>
-                            </div>
-                            <div class="flex justify-between text-sm font-semibold border-t border-atelier-sand pt-2 text-atelier-dark">
-                                <span>Tổng cộng:</span>
-                                <span id="summary-total" class="text-base text-atelier-gold">0đ</span>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="w-full py-3.5 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition font-medium mt-4">
-                            Đặt Hàng Ngay
-                        </button>
+                    <!-- Checkout Customer Details Form -->
+                    <form onsubmit="handleCheckoutSubmit(event)" class="space-y-3 pt-4 border-t border-atelier-sand">
+                        <h3 class="font-serif font-medium text-sm">Thông Tin Giao Hàng</h3>
+                        <input type="text" placeholder="Họ và tên *" required class="w-full p-2 text-xs bg-white border border-atelier-sand focus:outline-none">
+                        <input type="tel" placeholder="Số điện thoại *" required class="w-full p-2 text-xs bg-white border border-atelier-sand focus:outline-none">
+                        <input type="text" placeholder="Địa chỉ nhận hàng *" required class="w-full p-2 text-xs bg-white border border-atelier-sand focus:outline-none">
+                        <select class="w-full p-2 text-xs bg-white border border-atelier-sand focus:outline-none">
+                            <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                            <option value="bank">Chuyển khoản ngân hàng (QR Code)</option>
+                        </select>
+                        <button type="submit" class="w-full py-3.5 bg-atelier-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-atelier-gold transition shadow-md mt-2">Hoàn Tất Đặt Hàng</button>
                     </form>
                 </div>
             </div>
@@ -634,221 +563,267 @@
 
     </main>
 
-    <!-- Quick View Product Modal -->
-    <div id="quickview-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
-        <div class="bg-white max-w-3xl w-full p-6 relative overflow-y-auto max-h-[90vh]">
-            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-atelier-dark text-xl hover:text-atelier-gold">&times;</button>
-            <div id="quickview-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Filled via JS -->
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-atelier-bg max-w-3xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar border border-atelier-sand shadow-2xl relative p-6 md:p-8">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-atelier-dark hover:text-atelier-gold text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Dynamic Content -->
             </div>
         </div>
     </div>
 
-    <!-- Order Success Modal -->
-    <div id="order-success-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
-        <div class="bg-white max-w-lg w-full p-8 text-center space-y-4 relative border border-atelier-sand">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl">
-                <i class="fa-solid fa-check"></i>
-            </div>
+    <!-- ORDER SUCCESS MODAL -->
+    <div id="order-success-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white max-w-md w-full p-8 text-center space-y-4 border border-atelier-gold shadow-2xl">
+            <i class="fa-solid fa-circle-check text-5xl text-atelier-gold"></i>
             <h2 class="font-serif text-2xl font-normal">Đặt Hàng Thành Công!</h2>
-            <p class="text-xs text-atelier-muted">Mã đơn hàng: <span id="success-order-id" class="font-mono font-bold text-atelier-dark">#LUMEN-12345</span></p>
-            
-            <div class="bg-atelier-card p-4 text-left text-xs space-y-2 border border-atelier-sand my-4">
-                <p><strong>Khách hàng:</strong> <span id="success-cust-name"></span></p>
-                <p><strong>SĐT:</strong> <span id="success-cust-phone"></span></p>
-                <p><strong>Địa chỉ:</strong> <span id="success-cust-address"></span></p>
-                <p><strong>Tổng tiền:</strong> <span id="success-total" class="font-bold text-atelier-gold"></span></p>
-                <p><strong>Phương thức:</strong> <span id="success-payment"></span></p>
-            </div>
-
-            <!-- Simulated QR Code if Bank method -->
-            <div id="qr-section" class="hidden text-center border-t border-atelier-sand pt-3">
-                <p class="text-xs text-atelier-muted mb-2">Quét mã QR để hoàn tất chuyển khoản:</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=LUMEN_PAYMENT_DEMO" alt="QR Payment" class="mx-auto border border-atelier-sand p-1">
-            </div>
-
-            <button onclick="finishOrder()" class="w-full py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Về Trang Chủ</button>
+            <p class="text-xs text-atelier-muted leading-relaxed">Cảm ơn bạn đã lựa chọn Lumen Atelier. Chúng tôi đã ghi nhận đơn hàng và sẽ liên hệ xác nhận trong thời gian sớm nhất.</p>
+            <button onclick="closeSuccessModal()" class="w-full py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Tiếp Tục Mua Sắm</button>
         </div>
     </div>
 
-    <!-- Toast Notification Overlay -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-atelier-dark text-white text-xs py-3 px-5 shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
-        <i class="fa-solid fa-circle-check text-atelier-gold"></i>
-        <span id="toast-message">Đã thêm vào giỏ hàng!</span>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-atelier-dark text-atelier-bg border-t border-stone-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="space-y-3">
-                <span class="font-serif text-xl tracking-widest uppercase">Lumen Atelier</span>
-                <p class="text-xs text-stone-400 font-light leading-relaxed">Nghệ thuật thời trang may đo cao cấp kết hợp phong cách tối giản và triết lý bền vững.</p>
-            </div>
-            <div>
-                <h4 class="text-xs uppercase tracking-widest font-semibold mb-4 text-atelier-gold">Liên Kết Nhanh</h4>
-                <ul class="space-y-2 text-xs text-stone-300">
-                    <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-atelier-gold">Trang Chủ</a></li>
-                    <li><a href="javascript:void(0)" onclick="navigateTo('shop')" class="hover:text-atelier-gold">Bộ Sưu Tập</a></li>
-                    <li><a href="javascript:void(0)" onclick="navigateTo('about')" class="hover:text-atelier-gold">Về Chúng Tôi</a></li>
-                    <li><a href="javascript:void(0)" onclick="navigateTo('sizeguide')" class="hover:text-atelier-gold">Bảng Size</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs uppercase tracking-widest font-semibold mb-4 text-atelier-gold">Hỗ Trợ Khách Hàng</h4>
-                <ul class="space-y-2 text-xs text-stone-300">
-                    <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-atelier-gold">Liên Hệ & FAQ</a></li>
-                    <li><a href="javascript:void(0)" onclick="navigateTo('cart')" class="hover:text-atelier-gold">Giỏ Hàng</a></li>
-                    <li><a href="javascript:void(0)" onclick="navigateTo('sizeguide')" class="hover:text-atelier-gold">Hướng Dẫn Bảo Quản</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs uppercase tracking-widest font-semibold mb-4 text-atelier-gold">Nhận Thông Tin Mới</h4>
-                <p class="text-xs text-stone-400 mb-3">Đăng ký để nhận thông tin về bộ sưu tập mới nhất.</p>
-                <div class="flex">
-                    <input type="email" placeholder="Email của bạn..." class="p-2 text-xs bg-stone-800 text-white w-full focus:outline-none">
-                    <button class="px-4 bg-atelier-gold text-atelier-dark text-xs font-semibold hover:bg-white transition">Gửi</button>
+    <!-- MAIN FOOTER -->
+    <footer class="bg-atelier-dark text-atelier-sand pt-16 pb-8 border-t border-stone-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800 text-xs">
+            <!-- Col 1 -->
+            <div class="space-y-4">
+                <h3 class="font-serif text-xl tracking-widest text-white uppercase">Lumen Atelier</h3>
+                <p class="text-stone-400 leading-relaxed font-light">Thương hiệu thời trang cao cấp hướng tới vẻ đẹp tối giản, bền vững và trường tồn cùng thời gian.</p>
+                <div class="flex space-x-4 text-base text-stone-300">
+                    <a href="#" class="hover:text-atelier-gold transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-atelier-gold transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-atelier-gold transition"><i class="fa-brands fa-pinterest"></i></a>
                 </div>
             </div>
+
+            <!-- Col 2 -->
+            <div class="space-y-3">
+                <h4 class="font-serif text-sm font-medium text-white uppercase tracking-wider">Khám Phá</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('shop')" class="hover:text-white transition">Bộ Sưu Tập Mới</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategoryAndNavigate('Đầm')" class="hover:text-white transition">Đầm & Jumpsuit</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategoryAndNavigate('Áo khoác')" class="hover:text-white transition">Áo Khoác Blazer</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategoryAndNavigate('Phụ kiện')" class="hover:text-white transition">Phụ Kiện Lụa</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="space-y-3">
+                <h4 class="font-serif text-sm font-medium text-white uppercase tracking-wider">Hỗ Trợ Khách Hàng</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('sizeguide')" class="hover:text-white transition">Hướng Dẫn Chọn Size</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-white transition">Chính Sách Đổi Trả</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-white transition">Chính Sách Bảo Hành</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-white transition">Dịch Vụ May Đo</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 Newsletter -->
+            <div class="space-y-3">
+                <h4 class="font-serif text-sm font-medium text-white uppercase tracking-wider">Bản Tin Atelier</h4>
+                <p class="text-stone-400 leading-relaxed">Đăng ký nhận thông tin về các bộ sưu tập giới hạn mới nhất.</p>
+                <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                    <input type="email" placeholder="Email của bạn..." required class="w-full p-2.5 bg-stone-800 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-atelier-gold text-xs">
+                    <button type="submit" class="w-full py-2.5 bg-atelier-gold text-stone-900 uppercase font-semibold text-[11px] tracking-widest hover:bg-white transition">Đăng ký</button>
+                </form>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-stone-800 text-center text-xs text-stone-500">
-            &copy; 2026 Lumen Atelier. All Rights Reserved. Designed for High-End Fashion Experience.
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500">
+            <p>&copy; 2026 Lumen Atelier. All Rights Reserved.</p>
+            <p class="mt-2 sm:mt-0">High-End Sustainable Fashion Studio</p>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT APP LOGIC -->
     <script>
         // --- 1. PRODUCT DATABASE ---
         const PRODUCTS = [
             {
-                id: 'lumen-001',
-                name: 'Đầm Lụa Tơ Tằm Silk Slip Dress',
+                id: 'p1',
+                name: 'Đầm Lụa Tơ Tằm Minimalist Silk Slip Dress',
                 category: 'Đầm',
                 price: 2450000,
-                color: 'Kem Sand',
-                colorHex: '#E7E2D8',
-                sizes: ['XS', 'S', 'M', 'L'],
+                originalPrice: 2850000,
                 image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: true,
-                description: 'Đầm hai dây làm từ 100% lụa tơ tằm Mulberry, đường cắt xéo ôm nhẹ theo đường cong cơ thể, mang lại vẻ quyến rũ thanh lịch.'
+                colors: ['Vàng Cát', 'Đen', 'Kem'],
+                sizes: ['XS', 'S', 'M', 'L'],
+                isBestseller: true,
+                badge: 'Best Seller',
+                description: 'Đầm hai dây làm từ 100% Lụa Tơ Tằm Bảo Lộc cao cấp, cắt bias ôm trọn đường cong tự nhiên nhẹ nhàng, mang lại cảm giác vô cùng mượt mà trên làn da.'
             },
             {
-                id: 'lumen-002',
-                name: 'Áo Khoác Wool Blend Minimalist Blazer',
+                id: 'p2',
+                name: 'Áo Khoác Tailored Linen Blazer',
                 category: 'Áo khoác',
-                price: 3200000,
-                color: 'Đen Charcoal',
-                colorHex: '#292524',
-                sizes: ['S', 'M', 'L'],
+                price: 1850000,
+                originalPrice: 0,
                 image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: true,
-                description: 'Áo blazer dạ đệm vai vừa phải, phom dáng oversize hiện đại, thích hợp cho phong cách khoác ngoài mùa thu đông.'
+                colors: ['Beige', 'Trắng Moss', 'Đen'],
+                sizes: ['S', 'M', 'L'],
+                isBestseller: true,
+                badge: 'New Arrival',
+                description: 'Áo khoác Blazer phom oversize hiện đại, dệt từ sợi Linen hữu cơ Pháp thoáng khí, độ đứng phom hoàn hảo cho môi trường công sở & dạo phố.'
             },
             {
-                id: 'lumen-003',
-                name: 'Áo Sơ Mi Linen Premium Atelier Shirt',
+                id: 'p3',
+                name: 'Áo Sơ Mi Lụa Cổ V Silk Draped Top',
                 category: 'Áo',
                 price: 1250000,
-                color: 'Trắng Ngà',
-                colorHex: '#FFFFFF',
-                sizes: ['XS', 'S', 'M', 'L'],
+                originalPrice: 1500000,
                 image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: true,
-                description: 'Áo sơ mi vải Linen cao cấp nhập khẩu Pháp, thoáng mát, cúc xà cừ tự nhiên chạm khắc sắc nét.'
+                colors: ['Trắng', 'Hồng Thạch Anh'],
+                sizes: ['XS', 'S', 'M'],
+                isBestseller: true,
+                badge: 'Sale',
+                description: 'Áo sơ mi lụa tơ tằm cổ V rủ nhẹ nhàng, măng séc may tỉ mỉ. Phù hợp phối cùng quần ống rộng hoặc chân váy ôm.'
             },
             {
-                id: 'lumen-004',
-                name: 'Quần Ống Rộng Linen Wide-Leg Trousers',
-                category: 'Quần',
-                price: 1650000,
-                color: 'Be Oat',
-                colorHex: '#F3EFEA',
-                sizes: ['S', 'M', 'L'],
+                id: 'p4',
+                name: 'Quần Xếp Li Wide-Leg Linen Trousers',
+                category: 'Quần/Váy',
+                price: 1350000,
+                originalPrice: 0,
                 image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: true,
-                description: 'Quần cạp cao xếp ly dặn dặn, tôn dáng tối đa với chất liệu vải rủ cao cấp.'
-            },
-            {
-                id: 'lumen-005',
-                name: 'Áo Len Cashmere Soft Touch Knitwear',
-                category: 'Áo',
-                price: 2800000,
-                color: 'Nâu Latte',
-                colorHex: '#A8A29E',
-                sizes: ['XS', 'S', 'M'],
-                image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: false,
-                description: 'Áo dệt kim Cashmere siêu mềm mịn, giữ ấm vượt trội mà vẫn mỏng nhẹ.'
-            },
-            {
-                id: 'lumen-006',
-                name: 'Đầm Dạng Vấn Linen Wrap Midi Dress',
-                category: 'Đầm',
-                price: 1950000,
-                color: 'Kem Sand',
-                colorHex: '#E7E2D8',
+                colors: ['Beige', 'Nâu Đất', 'Đen'],
                 sizes: ['S', 'M', 'L'],
-                image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: false,
-                description: 'Thiết kế dáng wrap linh hoạt cho mọi vóc dáng, chi tiết thắt eo dịu dàng.'
+                isBestseller: true,
+                badge: '',
+                description: 'Quần ống rộng lưng cao với chi tiết xếp li tinh tế trước cạp. Chất liệu Linen pha Cotton thoáng mát cho ngày hè.'
             },
             {
-                id: 'lumen-007',
-                name: 'Túi Xách Da Thuộc Thủ Công Atelier Tote',
-                category: 'Phụ kiện',
-                price: 3500000,
-                color: 'Đen Charcoal',
-                colorHex: '#292524',
-                sizes: ['Freesize'],
-                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: false,
-                description: 'Túi da bò thật chế tác thủ công, sức chứa lớn cho công sở và dạo phố.'
+                id: 'p5',
+                name: 'Áo Len Cashmere Turtleneck Knitwear',
+                category: 'Áo',
+                price: 2100000,
+                originalPrice: 2500000,
+                image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop',
+                colors: ['Kem', 'Xám Nâu'],
+                sizes: ['S', 'M'],
+                isBestseller: false,
+                badge: 'Hot',
+                description: 'Áo len cổ lọ dệt từ 100% Cashmere cao cấp siêu nhẹ nhưng giữ ấm tuyệt vời cho những ngày chớm đông.'
             },
             {
-                id: 'lumen-008',
-                name: 'Chân Váy Lụa Xếp Ly Silk Pleated Skirt',
-                category: 'Quần',
-                price: 1850000,
-                color: 'Trắng Ngà',
-                colorHex: '#FFFFFF',
+                id: 'p6',
+                name: 'Đầm Dài Xòe Trench Midi Dress',
+                category: 'Đầm',
+                price: 2650000,
+                originalPrice: 0,
+                image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop',
+                colors: ['Beige', 'Xanh Olive'],
                 sizes: ['XS', 'S', 'M'],
+                isBestseller: false,
+                badge: 'Limited',
+                description: 'Thiết kế đầm Midi lấy cảm hứng từ áo Trench Coat thanh lịch, kèm đai lưng thắt eo tôn dáng chuẩn phong cách Châu Âu.'
+            },
+            {
+                id: 'p7',
+                name: 'Chân Váy Lụa Satin Bias Cut Skirt',
+                category: 'Quần/Váy',
+                price: 1150000,
+                originalPrice: 1350000,
                 image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=800&auto=format&fit=crop',
-                isBestSeller: false,
-                description: 'Chân váy dài lụa dập ly nhỏ tinh tế, tạo chuyển động mềm mại theo từng bước chân.'
+                colors: ['Vàng Cát', 'Đen', 'Xanh Champagne'],
+                sizes: ['XS', 'S', 'M', 'L'],
+                isBestseller: false,
+                badge: '',
+                description: 'Chân váy lụa satin dệt chéo (bias cut) tạo độ rủ mềm mại tự nhiên theo từng bước di chuyển của phái đẹp.'
+            },
+            {
+                id: 'p8',
+                name: 'Áo Khoác Dạ Dáng Dài Wool Trench Coat',
+                category: 'Áo khoác',
+                price: 3850000,
+                originalPrice: 4200000,
+                image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?q=80&w=800&auto=format&fit=crop',
+                colors: ['Nâu Camel', 'Đen'],
+                sizes: ['S', 'M', 'L'],
+                isBestseller: false,
+                badge: 'Premium',
+                description: 'Áo măng tô chất liệu Dạ Len Wool 100% hai mặt thủ công, đường cắt chuẩn xác khẳng định đẳng cấp xa xỉ.'
+            },
+            {
+                id: 'p9',
+                name: 'Khăn Choàng Lụa Họa Tiết Hand-Painted Scarf',
+                category: 'Phụ kiện',
+                price: 750000,
+                originalPrice: 0,
+                image: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=800&auto=format&fit=crop',
+                colors: ['Họa Tiết Vàng', 'Họa Tiết Xanh'],
+                sizes: ['Freesize'],
+                isBestseller: false,
+                badge: 'Artisanal',
+                description: 'Khăn choàng lụa tơ tằm vẽ tay thủ công bởi các nghệ nhân, phụ kiện hoàn hảo tạo điểm nhấn thanh lịch.'
+            },
+            {
+                id: 'p10',
+                name: 'Đầm Dạ Hội Bờ Vai Silk Evening Gown',
+                category: 'Đầm',
+                price: 3200000,
+                originalPrice: 0,
+                image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop',
+                colors: ['Đen', 'Đỏ Rượu'],
+                sizes: ['S', 'M'],
+                isBestseller: false,
+                badge: 'Exclusive',
+                description: 'Đầm dạ hội trễ vai sang trọng, kỹ thuật xếp dún thủ công mang đến vẻ cuốn hút lộng lẫy cho các buổi tiệc tối.'
+            },
+            {
+                id: 'p11',
+                name: 'Quần Shorts Linen Lưng Cao',
+                category: 'Quần/Váy',
+                price: 850000,
+                originalPrice: 950000,
+                image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=800&auto=format&fit=crop',
+                colors: ['Beige', 'Trắng'],
+                sizes: ['XS', 'S', 'M'],
+                isBestseller: false,
+                badge: '',
+                description: 'Quần short linen cạp cao tối giản, năng động nhưng vẫn giữ nét lịch sự tinh tế cho các chuyến nghỉ dưỡng.'
+            },
+            {
+                id: 'p12',
+                name: 'Túi Xách Thêu Thủ Công Linen Tote',
+                category: 'Phụ kiện',
+                price: 650000,
+                originalPrice: 0,
+                image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop',
+                colors: ['Mộc', 'Đen'],
+                sizes: ['Freesize'],
+                isBestseller: false,
+                badge: 'Eco Friendly',
+                description: 'Túi tote bằng vải linen mộc cao cấp thêu logo thương hiệu tỉ mỉ, thân thiện với môi trường.'
             }
         ];
 
         // --- 2. GLOBAL STATE ---
-        let cart = JSON.parse(localStorage.getItem('lumen_cart')) || [];
-        let wishlist = JSON.parse(localStorage.getItem('lumen_wishlist')) || [];
-        let currentDiscountPercent = 0;
-        let activeCategoryFilter = 'all';
+        let cart = [];
+        let wishlist = [];
+        let selectedCategoryFilter = 'all';
+        let appliedPromo = false;
 
-        // --- 3. ROUTING SYSTEM (SINGLE PAGE APPLICATION VIEWS) ---
+        // --- 3. INITIALIZATION & NAVIGATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHomeBestsellers();
+            initShopFilters();
+            renderShopProducts();
+            updateBadges();
+        });
+
         function navigateTo(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-view').forEach(page => {
-                page.classList.remove('active');
-            });
-
-            // Show selected page
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
             const target = document.getElementById(`page-${pageId}`);
             if (target) {
                 target.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Update Header nav links active status
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('text-atelier-gold', 'font-semibold');
-            });
-            const activeNav = document.querySelector(`.nav-${pageId}`);
-            if (activeNav) {
-                activeNav.classList.add('text-atelier-gold', 'font-semibold');
-            }
-
-            // Trigger specific page renders
-            if (pageId === 'shop') renderShopProducts();
-            if (pageId === 'wishlist') renderWishlist();
-            if (pageId === 'cart') renderCart();
+            if (pageId === 'cart') renderCartView();
+            if (pageId === 'wishlist') renderWishlistView();
         }
 
         function toggleMobileMenu() {
@@ -856,466 +831,437 @@
             menu.classList.toggle('hidden');
         }
 
-        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-msg');
+            const iconEl = document.getElementById('toast-icon');
 
-        // --- 4. RENDERERS & FILTERS ---
-        function formatMoney(amount) {
+            msgEl.textContent = message;
+            iconEl.className = isSuccess ? 'fa-solid fa-circle-check text-atelier-gold text-base' : 'fa-solid fa-circle-exclamation text-red-400 text-base';
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function formatCurrency(amount) {
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        // --- 4. RENDERERS ---
+        function createProductCardHTML(product) {
+            const isWishlisted = wishlist.includes(product.id);
+            return `
+                <div class="group bg-white border border-atelier-sand overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-lg">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openProductModal('${product.id}')">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105">
+                        ${product.badge ? `<span class="absolute top-3 left-3 bg-atelier-dark text-white text-[10px] uppercase tracking-widest px-2 py-1">${product.badge}</span>` : ''}
+                        <button onclick="event.stopPropagation(); toggleWishlist('${product.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-atelier-dark flex items-center justify-center transition">
+                            <i class="${isWishlisted ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-between space-y-3">
+                        <div>
+                            <p class="text-[10px] text-atelier-gold uppercase tracking-widest font-semibold">${product.category}</p>
+                            <h3 onclick="openProductModal('${product.id}')" class="font-serif text-sm font-medium line-clamp-2 cursor-pointer hover:text-atelier-gold transition mt-1">${product.name}</h3>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="font-semibold text-xs text-atelier-dark">${formatCurrency(product.price)}</span>
+                                ${product.originalPrice ? `<span class="text-[11px] text-atelier-muted line-through">${formatCurrency(product.originalPrice)}</span>` : ''}
+                            </div>
+                            <button onclick="quickAddToCart('${product.id}')" class="w-full py-2 bg-atelier-card text-atelier-dark hover:bg-atelier-dark hover:text-white text-xs uppercase tracking-widest transition border border-atelier-sand flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bag-shopping text-xs"></i> Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         function renderHomeBestsellers() {
             const container = document.getElementById('home-bestsellers');
-            const bestSellers = PRODUCTS.filter(p => p.isBestSeller);
-            
-            container.innerHTML = bestSellers.map(p => `
-                <div class="group bg-white border border-atelier-sand overflow-hidden">
-                    <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('${p.id}')">
-                        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <button onclick="event.stopPropagation(); toggleWishlist('${p.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-atelier-dark hover:text-red-500 transition">
-                            <i class="${wishlist.includes(p.id) ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
-                        </button>
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <span class="text-[10px] uppercase tracking-widest text-atelier-muted">${p.category}</span>
-                        <h3 class="font-serif text-sm font-medium truncate cursor-pointer" onclick="openQuickView('${p.id}')">${p.name}</h3>
-                        <p class="text-xs font-semibold text-atelier-dark">${formatMoney(p.price)}</p>
-                        <button onclick="openQuickView('${p.id}')" class="w-full py-2 mt-2 bg-atelier-bg text-atelier-dark text-xs uppercase tracking-widest hover:bg-atelier-dark hover:text-white transition">Xem Chi Tiết</button>
-                    </div>
-                </div>
-            `).join('');
+            const bestsellers = PRODUCTS.filter(p => p.isBestseller);
+            container.innerHTML = bestsellers.map(createProductCardHTML).join('');
         }
 
-        function filterCategoryAndNavigate(cat) {
-            activeCategoryFilter = cat;
-            navigateTo('shop');
-        }
-
-        function renderShopFilters() {
+        function initShopFilters() {
             // Render Categories
             const categories = ['all', ...new Set(PRODUCTS.map(p => p.category))];
-            document.getElementById('filter-categories').innerHTML = categories.map(cat => `
-                <label class="flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="shop-cat" value="${cat}" ${activeCategoryFilter === cat ? 'checked' : ''} onchange="activeCategoryFilter = '${cat}'; renderShopProducts();" class="accent-atelier-dark">
-                    <span>${cat === 'all' ? 'Tất cả danh mục' : cat}</span>
+            const catContainer = document.getElementById('filter-categories');
+            catContainer.innerHTML = categories.map(cat => `
+                <label class="flex items-center gap-2 cursor-pointer hover:text-atelier-gold transition">
+                    <input type="radio" name="shop-category" value="${cat}" ${cat === 'all' ? 'checked' : ''} onchange="setCategoryFilter('${cat}')" class="accent-atelier-dark">
+                    <span>${cat === 'all' ? 'Tất Cả Sản Phẩm' : cat}</span>
                 </label>
             `).join('');
 
             // Render Colors
-            const colors = [...new Set(PRODUCTS.map(p => p.color))];
-            document.getElementById('filter-colors').innerHTML = colors.map(c => `
-                <button onclick="filterByColor('${c}')" class="px-2.5 py-1 text-[11px] border border-atelier-sand hover:border-atelier-dark transition bg-white">${c}</button>
+            const colors = [...new Set(PRODUCTS.flatMap(p => p.colors))];
+            const colorContainer = document.getElementById('filter-colors');
+            colorContainer.innerHTML = colors.map(c => `
+                <button onclick="toggleFilterTag(this, 'color')" data-value="${c}" class="filter-tag-color text-[11px] px-2.5 py-1 border border-atelier-sand bg-white text-atelier-dark hover:border-atelier-dark transition">${c}</button>
             `).join('');
 
             // Render Sizes
             const sizes = ['XS', 'S', 'M', 'L', 'Freesize'];
-            document.getElementById('filter-sizes').innerHTML = sizes.map(s => `
-                <button onclick="filterBySize('${s}')" class="w-8 h-8 text-[11px] border border-atelier-sand hover:border-atelier-dark transition bg-white flex items-center justify-center">${s}</button>
+            const sizeContainer = document.getElementById('filter-sizes');
+            sizeContainer.innerHTML = sizes.map(s => `
+                <button onclick="toggleFilterTag(this, 'size')" data-value="${s}" class="filter-tag-size text-[11px] px-3 py-1 border border-atelier-sand bg-white text-atelier-dark hover:border-atelier-dark transition">${s}</button>
             `).join('');
         }
 
-        let activeColorFilter = null;
-        let activeSizeFilter = null;
-
-        function filterByColor(color) {
-            activeColorFilter = activeColorFilter === color ? null : color;
+        function toggleFilterTag(btn, type) {
+            btn.classList.toggle('bg-atelier-dark');
+            btn.classList.toggle('text-white');
             renderShopProducts();
         }
 
-        function filterBySize(size) {
-            activeSizeFilter = activeSizeFilter === size ? null : size;
+        function setCategoryFilter(cat) {
+            selectedCategoryFilter = cat;
             renderShopProducts();
         }
 
-        function resetFilters() {
-            activeCategoryFilter = 'all';
-            activeColorFilter = null;
-            activeSizeFilter = null;
-            document.getElementById('shop-search').value = '';
-            document.getElementById('filter-price-range').value = 'all';
-            renderShopFilters();
+        function filterCategoryAndNavigate(cat) {
+            selectedCategoryFilter = cat;
+            const catRadio = document.querySelector(`input[name="shop-category"][value="${cat}"]`);
+            if (catRadio) catRadio.checked = true;
+            navigateTo('shop');
             renderShopProducts();
         }
 
         function renderShopProducts() {
-            const searchQuery = document.getElementById('shop-search').value.toLowerCase();
-            const priceRange = document.getElementById('filter-price-range').value;
-            const sortBy = document.getElementById('sort-select').value;
+            const searchQuery = document.getElementById('shop-search')?.value.toLowerCase() || '';
+            const priceRange = document.getElementById('filter-price-range')?.value || 'all';
+            const sortVal = document.getElementById('sort-select')?.value || 'featured';
+
+            // Selected active tags
+            const activeColors = Array.from(document.querySelectorAll('.filter-tag-color.bg-atelier-dark')).map(b => b.dataset.value);
+            const activeSizes = Array.from(document.querySelectorAll('.filter-tag-size.bg-atelier-dark')).map(b => b.dataset.value);
 
             let filtered = PRODUCTS.filter(p => {
                 // Category
-                if (activeCategoryFilter !== 'all' && p.category !== activeCategoryFilter) return false;
+                if (selectedCategoryFilter !== 'all' && p.category !== selectedCategoryFilter) return false;
                 // Search
                 if (searchQuery && !p.name.toLowerCase().includes(searchQuery)) return false;
-                // Color
-                if (activeColorFilter && p.color !== activeColorFilter) return false;
-                // Size
-                if (activeSizeFilter && !p.sizes.includes(activeSizeFilter)) return false;
                 // Price
                 if (priceRange === 'under1' && p.price >= 1000000) return false;
                 if (priceRange === '1to2' && (p.price < 1000000 || p.price > 2000000)) return false;
                 if (priceRange === 'over2' && p.price <= 2000000) return false;
+                // Color
+                if (activeColors.length > 0 && !p.colors.some(c => activeColors.includes(c))) return false;
+                // Size
+                if (activeSizes.length > 0 && !p.sizes.some(s => activeSizes.includes(s))) return false;
 
                 return true;
             });
 
             // Sorting
-            if (sortBy === 'price-asc') filtered.sort((a, b) => a.price - b.price);
-            if (sortBy === 'price-desc') filtered.sort((a, b) => b.price - a.price);
-            if (sortBy === 'name-asc') filtered.sort((a, b) => a.name.localeCompare(b.name));
-
-            document.getElementById('product-count').textContent = filtered.length;
+            if (sortVal === 'price-asc') filtered.sort((a,b) => a.price - b.price);
+            if (sortVal === 'price-desc') filtered.sort((a,b) => b.price - a.price);
+            if (sortVal === 'name-asc') filtered.sort((a,b) => a.name.localeCompare(b.name));
 
             const grid = document.getElementById('shop-products-grid');
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-atelier-muted text-xs">Không tìm thấy sản phẩm phù hợp với bộ lọc.</div>`;
-                return;
-            }
+            const countEl = document.getElementById('product-count');
+            countEl.textContent = filtered.length;
 
-            grid.innerHTML = filtered.map(p => `
-                <div class="group bg-white border border-atelier-sand overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('${p.id}')">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <button onclick="event.stopPropagation(); toggleWishlist('${p.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-atelier-dark hover:text-red-500 transition">
-                                <i class="${wishlist.includes(p.id) ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="p-4 space-y-1">
-                            <span class="text-[10px] uppercase tracking-widest text-atelier-muted">${p.category}</span>
-                            <h3 class="font-serif text-sm font-medium line-clamp-1 cursor-pointer hover:text-atelier-gold" onclick="openQuickView('${p.id}')">${p.name}</h3>
-                            <p class="text-xs font-semibold text-atelier-dark">${formatMoney(p.price)}</p>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0">
-                        <button onclick="openQuickView('${p.id}')" class="w-full py-2 bg-atelier-bg text-atelier-dark text-xs uppercase tracking-widest hover:bg-atelier-dark hover:text-white transition">Xem Chi Tiết</button>
-                    </div>
-                </div>
-            `).join('');
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-xs text-atelier-muted">Không tìm thấy sản phẩm phù hợp với bộ lọc.</div>`;
+            } else {
+                grid.innerHTML = filtered.map(createProductCardHTML).join('');
+            }
         }
 
-        // --- 5. QUICK VIEW MODAL & CART MANAGEMENT ---
-        function openQuickView(productId) {
+        function resetFilters() {
+            selectedCategoryFilter = 'all';
+            document.querySelector('input[name="shop-category"][value="all"]').checked = true;
+            document.getElementById('shop-search').value = '';
+            document.getElementById('filter-price-range').value = 'all';
+            document.getElementById('sort-select').value = 'featured';
+            document.querySelectorAll('.filter-tag-color, .filter-tag-size').forEach(b => {
+                b.classList.remove('bg-atelier-dark', 'text-white');
+            });
+            renderShopProducts();
+        }
+
+        // --- 5. PRODUCT MODAL & CART LOGIC ---
+        function openProductModal(productId) {
             const product = PRODUCTS.find(p => p.id === productId);
             if (!product) return;
 
-            const modalContent = document.getElementById('quickview-content');
-            modalContent.innerHTML = `
-                <div class="h-96">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover border border-atelier-sand">
+            const modal = document.getElementById('product-modal');
+            const container = document.getElementById('modal-content');
+
+            container.innerHTML = `
+                <div>
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-96 object-cover border border-atelier-sand">
                 </div>
-                <div class="flex flex-col justify-between space-y-4">
-                    <div class="space-y-2">
-                        <span class="text-xs uppercase tracking-widest text-atelier-gold font-semibold">${product.category}</span>
-                        <h2 class="font-serif text-2xl font-normal">${product.name}</h2>
-                        <p class="text-lg font-semibold text-atelier-dark">${formatMoney(product.price)}</p>
-                        <p class="text-xs text-atelier-muted leading-relaxed pt-2 border-t border-atelier-sand">${product.description}</p>
+                <div class="space-y-4 text-xs flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase text-atelier-gold font-semibold">${product.category}</span>
+                        <h2 class="font-serif text-xl font-medium mt-1 text-atelier-dark">${product.name}</h2>
+                        <div class="flex items-center gap-3 my-3">
+                            <span class="font-serif text-lg font-semibold text-atelier-dark">${formatCurrency(product.price)}</span>
+                            ${product.originalPrice ? `<span class="text-atelier-muted line-through">${formatCurrency(product.originalPrice)}</span>` : ''}
+                        </div>
+                        <p class="text-atelier-muted leading-relaxed">${product.description}</p>
                     </div>
 
-                    <div class="space-y-3">
+                    <div class="space-y-4 pt-4 border-t border-atelier-sand">
+                        <!-- Color Selector -->
                         <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Màu sắc: <strong>${product.color}</strong></label>
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Chọn Kích Thước</label>
-                            <div class="flex gap-2" id="qv-sizes">
-                                ${product.sizes.map((s, idx) => `
-                                    <button onclick="selectQvSize(this, '${s}')" class="qv-size-btn w-9 h-9 border border-atelier-sand text-xs flex items-center justify-center hover:border-atelier-dark transition ${idx === 0 ? 'border-atelier-dark bg-atelier-dark text-white' : ''}">${s}</button>
+                            <label class="block uppercase font-medium text-[10px] text-atelier-muted mb-1">Màu sắc:</label>
+                            <div class="flex flex-wrap gap-2" id="modal-colors">
+                                ${product.colors.map((c, i) => `
+                                    <button onclick="selectModalOption('color', '${c}')" class="modal-color-btn text-xs px-3 py-1 border border-atelier-sand ${i === 0 ? 'bg-atelier-dark text-white' : 'bg-white'}">${c}</button>
                                 `).join('')}
                             </div>
                         </div>
+
+                        <!-- Size Selector -->
                         <div>
-                            <label class="block text-xs uppercase text-atelier-muted mb-1">Số Lượng</label>
-                            <div class="flex items-center border border-atelier-sand w-28 bg-white">
-                                <button onclick="adjustQvQty(-1)" class="w-8 py-1 text-xs">-</button>
-                                <input type="number" id="qv-qty" value="1" min="1" readonly class="w-12 text-center text-xs border-none focus:outline-none">
-                                <button onclick="adjustQvQty(1)" class="w-8 py-1 text-xs">+</button>
+                            <label class="block uppercase font-medium text-[10px] text-atelier-muted mb-1">Size:</label>
+                            <div class="flex flex-wrap gap-2" id="modal-sizes">
+                                ${product.sizes.map((s, i) => `
+                                    <button onclick="selectModalOption('size', '${s}')" class="modal-size-btn text-xs px-3 py-1 border border-atelier-sand ${i === 0 ? 'bg-atelier-dark text-white' : 'bg-white'}">${s}</button>
+                                `).join('')}
                             </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-2 pt-4">
-                        <button onclick="addToCartFromModal('${product.id}')" class="flex-grow py-3 bg-atelier-dark text-white text-xs uppercase tracking-widest hover:bg-atelier-gold transition">Thêm Vào Giỏ Hàng</button>
-                        <button onclick="toggleWishlist('${product.id}')" class="px-4 border border-atelier-sand hover:text-red-500 transition"><i class="fa-regular fa-heart text-lg"></i></button>
+                        <!-- Quantity & Add -->
+                        <div class="flex gap-3 pt-2">
+                            <div class="flex items-center border border-atelier-sand bg-white">
+                                <button onclick="adjustModalQty(-1)" class="px-3 py-2 text-xs hover:bg-atelier-sand">-</button>
+                                <span id="modal-qty" class="px-3 text-xs font-semibold">1</span>
+                                <button onclick="adjustModalQty(1)" class="px-3 py-2 text-xs hover:bg-atelier-sand">+</button>
+                            </div>
+                            <button onclick="executeModalAddToCart('${product.id}')" class="flex-grow py-3 bg-atelier-dark text-white uppercase text-xs tracking-widest hover:bg-atelier-gold transition">
+                                Thêm Vào Giỏ Hàng
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
 
-            document.getElementById('quickview-modal').classList.remove('hidden');
+            modal.classList.remove('hidden');
         }
 
-        function closeQuickView() {
-            document.getElementById('quickview-modal').classList.add('hidden');
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
         }
 
-        let selectedModalSize = null;
+        let currentModalColor = '';
+        let currentModalSize = '';
 
-        function selectQvSize(btn, size) {
-            document.querySelectorAll('.qv-size-btn').forEach(b => {
-                b.classList.remove('border-atelier-dark', 'bg-atelier-dark', 'text-white');
+        function selectModalOption(type, val) {
+            const btns = document.querySelectorAll(`.modal-${type}-btn`);
+            btns.forEach(b => {
+                if (b.textContent.trim() === val) {
+                    b.classList.add('bg-atelier-dark', 'text-white');
+                    b.classList.remove('bg-white');
+                } else {
+                    b.classList.remove('bg-atelier-dark', 'text-white');
+                    b.classList.add('bg-white');
+                }
             });
-            btn.classList.add('border-atelier-dark', 'bg-atelier-dark', 'text-white');
-            selectedModalSize = size;
         }
 
-        function adjustQvQty(delta) {
-            const input = document.getElementById('qv-qty');
-            let val = parseInt(input.value) + delta;
-            if (val < 1) val = 1;
-            input.value = val;
+        function adjustModalQty(delta) {
+            const qtyEl = document.getElementById('modal-qty');
+            let current = parseInt(qtyEl.textContent) || 1;
+            current = Math.max(1, current + delta);
+            qtyEl.textContent = current;
         }
 
-        function addToCartFromModal(productId) {
+        function executeModalAddToCart(productId) {
             const product = PRODUCTS.find(p => p.id === productId);
-            const size = selectedModalSize || product.sizes[0];
-            const qty = parseInt(document.getElementById('qv-qty').value);
+            const activeColorBtn = document.querySelector('.modal-color-btn.bg-atelier-dark');
+            const activeSizeBtn = document.querySelector('.modal-size-btn.bg-atelier-dark');
+            const qty = parseInt(document.getElementById('modal-qty').textContent) || 1;
 
-            addToCart(product, size, qty);
-            closeQuickView();
+            const selectedColor = activeColorBtn ? activeColorBtn.textContent.trim() : product.colors[0];
+            const selectedSize = activeSizeBtn ? activeSizeBtn.textContent.trim() : product.sizes[0];
+
+            addToCart(product, selectedColor, selectedSize, qty);
+            closeProductModal();
         }
 
-        function addToCart(product, size, qty = 1) {
-            const existingIndex = cart.findIndex(item => item.id === product.id && item.size === size);
-            if (existingIndex > -1) {
-                cart[existingIndex].qty += qty;
+        function quickAddToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (product) {
+                addToCart(product, product.colors[0], product.sizes[0], 1);
+            }
+        }
+
+        function addToCart(product, color, size, qty = 1) {
+            const existing = cart.find(item => item.id === product.id && item.color === color && item.size === size);
+            if (existing) {
+                existing.qty += qty;
             } else {
                 cart.push({
                     id: product.id,
                     name: product.name,
                     price: product.price,
                     image: product.image,
-                    color: product.color,
+                    color: color,
                     size: size,
                     qty: qty
                 });
             }
+            updateBadges();
+            showToast(`Đã thêm "${product.name}" vào giỏ hàng.`);
+        }
 
-            saveCart();
-            showToast(`Đã thêm "${product.name}" vào giỏ hàng`);
+        function updateBadges() {
+            const cartBadge = document.getElementById('cart-badge');
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            cartBadge.textContent = totalItems;
+
+            const wishlistBadge = document.getElementById('wishlist-badge');
+            wishlistBadge.textContent = wishlist.length;
+            if (wishlist.length > 0) wishlistBadge.classList.remove('hidden');
+            else wishlistBadge.classList.add('hidden');
+        }
+
+        // --- 6. WISHLIST LOGIC ---
+        function toggleWishlist(productId) {
+            const idx = wishlist.indexOf(productId);
+            if (idx > -1) {
+                wishlist.splice(idx, 1);
+                showToast('Đã xóa khỏi danh sách yêu thích.');
+            } else {
+                wishlist.push(productId);
+                showToast('Đã thêm vào danh sách yêu thích.');
+            }
+            updateBadges();
+            renderShopProducts();
+            renderHomeBestsellers();
+            if (document.getElementById('page-wishlist').classList.contains('active')) {
+                renderWishlistView();
+            }
+        }
+
+        function renderWishlistView() {
+            const container = document.getElementById('wishlist-grid');
+            if (wishlist.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-16 text-xs text-atelier-muted">Bạn chưa lưu sản phẩm nào.</div>`;
+                return;
+            }
+            const items = PRODUCTS.filter(p => wishlist.includes(p.id));
+            container.innerHTML = items.map(createProductCardHTML).join('');
+        }
+
+        // --- 7. CART & CHECKOUT PAGE RENDER ---
+        function renderCartView() {
+            const emptyView = document.getElementById('cart-empty-view');
+            const contentView = document.getElementById('cart-content-view');
+            const itemsContainer = document.getElementById('cart-items-container');
+
+            if (cart.length === 0) {
+                emptyView.classList.remove('hidden');
+                contentView.classList.add('hidden');
+                return;
+            }
+
+            emptyView.classList.add('hidden');
+            contentView.classList.remove('hidden');
+
+            itemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="flex items-center justify-between p-4 bg-white border border-atelier-sand gap-4 text-xs">
+                    <img src="${item.image}" alt="${item.name}" class="w-20 h-24 object-cover">
+                    <div class="flex-grow space-y-1">
+                        <h3 class="font-serif font-medium text-sm text-atelier-dark">${item.name}</h3>
+                        <p class="text-atelier-muted">Phân loại: ${item.color} / Size: ${item.size}</p>
+                        <p class="font-semibold text-atelier-dark">${formatCurrency(item.price)}</p>
+                    </div>
+                    <div class="flex items-center border border-atelier-sand">
+                        <button onclick="updateCartQty(${index}, -1)" class="px-2 py-1 hover:bg-atelier-sand">-</button>
+                        <span class="px-3 font-semibold">${item.qty}</span>
+                        <button onclick="updateCartQty(${index}, 1)" class="px-2 py-1 hover:bg-atelier-sand">+</button>
+                    </div>
+                    <button onclick="removeFromCart(${index})" class="text-atelier-muted hover:text-red-600 p-2">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            calculateCartTotals();
         }
 
         function updateCartQty(index, delta) {
             cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            saveCart();
-            renderCart();
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+            updateBadges();
+            renderCartView();
         }
 
         function removeFromCart(index) {
             cart.splice(index, 1);
-            saveCart();
-            renderCart();
-        }
-
-        function saveCart() {
-            localStorage.setItem('lumen_cart', JSON.stringify(cart));
             updateBadges();
+            renderCartView();
         }
 
-        function updateBadges() {
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cart-badge').textContent = totalQty;
-
-            const wishlistBadge = document.getElementById('wishlist-badge');
-            wishlistBadge.textContent = wishlist.length;
-            if (wishlist.length > 0) {
-                wishlistBadge.classList.remove('hidden');
+        function applyPromoCode() {
+            const input = document.getElementById('promo-code-input').value.trim().toUpperCase();
+            if (input === 'LUMEN10') {
+                appliedPromo = true;
+                showToast('Đã áp dụng mã giảm giá 10%!');
+                calculateCartTotals();
             } else {
-                wishlistBadge.classList.add('hidden');
+                showToast('Mã giảm giá không hợp lệ!', false);
             }
         }
 
-        // --- 6. RENDER CART & CHECKOUT calculations ---
-        function renderCart() {
-            const listContainer = document.getElementById('cart-items-list');
-            const emptyBox = document.getElementById('cart-empty');
-            const summaryBox = document.getElementById('cart-summary-box');
+        function calculateCartTotals() {
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            const shipping = subtotal >= 2000000 || subtotal === 0 ? 0 : 35000;
+            const discount = appliedPromo ? subtotal * 0.10 : 0;
+            const total = subtotal + shipping - discount;
 
-            if (cart.length === 0) {
-                listContainer.innerHTML = '';
-                emptyBox.classList.remove('hidden');
-                summaryBox.classList.add('opacity-50', 'pointer-events-none');
-                updateCartTotals(0);
-                return;
-            }
-
-            emptyBox.classList.add('hidden');
-            summaryBox.classList.remove('opacity-50', 'pointer-events-none');
-
-            listContainer.innerHTML = cart.map((item, idx) => `
-                <div class="flex gap-4 p-4 bg-white border border-atelier-sand items-center">
-                    <img src="${item.image}" alt="${item.name}" class="w-20 h-24 object-cover border border-atelier-sand flex-shrink-0">
-                    <div class="flex-grow space-y-1">
-                        <h4 class="font-serif text-sm font-medium line-clamp-1">${item.name}</h4>
-                        <p class="text-[11px] text-atelier-muted">Màu: ${item.color} | Size: ${item.size}</p>
-                        <p class="text-xs font-semibold text-atelier-dark">${formatMoney(item.price)}</p>
-                    </div>
-                    <div class="flex items-center border border-atelier-sand bg-atelier-bg">
-                        <button onclick="updateCartQty(${idx}, -1)" class="w-7 py-1 text-xs">-</button>
-                        <span class="w-8 text-center text-xs">${item.qty}</span>
-                        <button onclick="updateCartQty(${idx}, 1)" class="w-7 py-1 text-xs">+</button>
-                    </div>
-                    <button onclick="removeFromCart(${idx})" class="text-atelier-muted hover:text-red-500 p-2 text-sm"><i class="fa-solid fa-trash-can"></i></button>
-                </div>
-            `).join('');
-
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            updateCartTotals(subtotal);
-        }
-
-        function updateCartTotals(subtotal) {
-            const shippingFee = subtotal >= 2000000 || subtotal === 0 ? 0 : 30000;
-            const discountAmount = subtotal * currentDiscountPercent;
-            const total = Math.max(0, subtotal - discountAmount + shippingFee);
-
-            // Free shipping bar calculation
-            const target = 2000000;
-            const percent = Math.min(100, Math.round((subtotal / target) * 100));
-            document.getElementById('freeship-bar').style.width = `${percent}%`;
-            document.getElementById('freeship-percent').textContent = `${percent}%`;
+            document.getElementById('cart-subtotal').textContent = formatCurrency(subtotal);
+            document.getElementById('cart-shipping').textContent = shipping === 0 ? 'Miễn phí' : formatCurrency(shipping);
             
-            const fsText = document.getElementById('freeship-text');
-            if (subtotal >= target) {
-                fsText.textContent = "Bạn đã đủ điều kiện được Miễn Phí Vận Chuyển!";
+            const discountRow = document.getElementById('discount-row');
+            if (appliedPromo) {
+                discountRow.classList.remove('hidden');
+                document.getElementById('cart-discount').textContent = `-${formatCurrency(discount)}`;
             } else {
-                fsText.textContent = `Mua thêm ${formatMoney(target - subtotal)} để được FreeShip`;
+                discountRow.classList.add('hidden');
             }
 
-            document.getElementById('summary-subtotal').textContent = formatMoney(subtotal);
-            document.getElementById('summary-shipping').textContent = shippingFee === 0 ? 'Miễn phí' : formatMoney(shippingFee);
-            
-            if (currentDiscountPercent > 0) {
-                document.getElementById('discount-row').classList.remove('hidden');
-                document.getElementById('summary-discount').textContent = `-${formatMoney(discountAmount)}`;
-            } else {
-                document.getElementById('discount-row').classList.add('hidden');
-            }
-
-            document.getElementById('summary-total').textContent = formatMoney(total);
+            document.getElementById('cart-total').textContent = formatCurrency(total);
         }
 
-        function applyCoupon() {
-            const code = document.getElementById('coupon-input').value.trim().toUpperCase();
-            const msg = document.getElementById('coupon-msg');
-
-            if (code === 'LUMEN10') {
-                currentDiscountPercent = 0.10;
-                msg.textContent = 'Mã LUMEN10 đã được áp dụng (Giảm 10%)';
-                msg.className = 'text-[11px] mt-1 text-emerald-600 block';
-            } else if (code === 'VIP20') {
-                currentDiscountPercent = 0.20;
-                msg.textContent = 'Mã VIP20 đã được áp dụng (Giảm 20%)';
-                msg.className = 'text-[11px] mt-1 text-emerald-600 block';
-            } else {
-                currentDiscountPercent = 0;
-                msg.textContent = 'Mã giảm giá không hợp lệ';
-                msg.className = 'text-[11px] mt-1 text-red-500 block';
-            }
-
-            renderCart();
-        }
-
-        function handleCheckout(e) {
+        function handleCheckoutSubmit(e) {
             e.preventDefault();
-            if (cart.length === 0) {
-                showToast('Giỏ hàng trống!');
-                return;
-            }
-
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const address = document.getElementById('cust-address').value;
-            const city = document.getElementById('cust-city').value;
-            const payment = document.querySelector('input[name="payment-method"]:checked').value;
-
-            const orderId = '#LUMEN-' + Math.floor(100000 + Math.random() * 900000);
-            const totalText = document.getElementById('summary-total').textContent;
-
-            document.getElementById('success-order-id').textContent = orderId;
-            document.getElementById('success-cust-name').textContent = name;
-            document.getElementById('success-cust-phone').textContent = phone;
-            document.getElementById('success-cust-address').textContent = `${address}, ${city}`;
-            document.getElementById('success-total').textContent = totalText;
-            document.getElementById('success-payment').textContent = payment === 'COD' ? 'Thanh toán khi nhận hàng' : payment === 'BANK' ? 'Chuyển khoản Ngân hàng/QR' : 'Thẻ Tín Dụng';
-
-            if (payment === 'BANK') {
-                document.getElementById('qr-section').classList.remove('hidden');
-            } else {
-                document.getElementById('qr-section').classList.add('hidden');
-            }
-
-            document.getElementById('order-success-modal').classList.remove('hidden');
-
-            // Clear cart
             cart = [];
-            saveCart();
-            renderCart();
+            appliedPromo = false;
+            updateBadges();
+            document.getElementById('order-success-modal').classList.remove('hidden');
         }
 
-        function finishOrder() {
+        function closeSuccessModal() {
             document.getElementById('order-success-modal').classList.add('hidden');
             navigateTo('home');
         }
 
-        // --- 7. WISHLIST TOGGLE & RENDER ---
-        function toggleWishlist(productId) {
-            const index = wishlist.indexOf(productId);
-            if (index > -1) {
-                wishlist.splice(index, 1);
-                showToast('Đã xóa khỏi danh sách yêu thích');
-            } else {
-                wishlist.push(productId);
-                showToast('Đã thêm vào danh sách yêu thích');
-            }
-            localStorage.setItem('lumen_wishlist', JSON.stringify(wishlist));
-            updateBadges();
-            renderHomeBestsellers();
-            renderShopProducts();
-            renderWishlist();
-        }
-
-        function renderWishlist() {
-            const grid = document.getElementById('wishlist-grid');
-            const empty = document.getElementById('wishlist-empty');
-
-            if (wishlist.length === 0) {
-                grid.innerHTML = '';
-                empty.classList.remove('hidden');
-                return;
-            }
-
-            empty.classList.add('hidden');
-            const items = PRODUCTS.filter(p => wishlist.includes(p.id));
-
-            grid.innerHTML = items.map(p => `
-                <div class="bg-white border border-atelier-sand overflow-hidden">
-                    <img src="${p.image}" class="w-full h-80 object-cover">
-                    <div class="p-4 space-y-2">
-                        <h3 class="font-serif text-sm font-medium">${p.name}</h3>
-                        <p class="text-xs font-semibold">${formatMoney(p.price)}</p>
-                        <button onclick="openQuickView('${p.id}')" class="w-full py-2 bg-atelier-dark text-white text-xs uppercase tracking-widest">Xem & Thêm Giỏ Hàng</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- 8. SIZE CALCULATOR LOGIC ---
+        // --- 8. SIZE CALCULATOR & FORMS ---
         function calculateSize() {
-            const height = parseFloat(document.getElementById('calc-height').value);
-            const weight = parseFloat(document.getElementById('calc-weight').value);
+            const h = parseFloat(document.getElementById('calc-height').value);
+            const w = parseFloat(document.getElementById('calc-weight').value);
             const fit = document.getElementById('calc-fit').value;
             const resBox = document.getElementById('size-result');
 
-            if (!height || !weight) {
-                alert('Vui lòng nhập đầy đủ chiều cao và cân nặng!');
+            if (!h || !w) {
+                showToast('Vui lòng nhập đầy đủ chiều cao và cân nặng.', false);
                 return;
             }
 
-            let size = 'M';
-            if (weight < 46) size = 'XS';
-            else if (weight <= 52) size = 'S';
-            else if (weight <= 58) size = 'M';
+            let size = 'S';
+            if (w < 46) size = 'XS';
+            else if (w >= 46 && w <= 52) size = 'S';
+            else if (w >= 53 && w <= 58) size = 'M';
             else size = 'L';
 
             if (fit === 'loose' && size !== 'L') {
@@ -1324,31 +1270,24 @@
                 else if (size === 'M') size = 'L';
             }
 
-            resBox.innerHTML = `Size đề xuất cho bạn: <strong class="text-sm font-bold text-atelier-gold">${size}</strong> (Dựa trên vóc dáng ${height}cm, ${weight}kg).`;
+            resBox.innerHTML = `
+                <p class="font-semibold text-sm">Gợi ý kích thước cho bạn: <span class="text-atelier-gold text-base font-bold">${size}</span></p>
+                <p class="mt-1 text-atelier-muted">Dựa trên chỉ số Chiều cao ${h}cm, Cân nặng ${w}kg và phom dáng mong muốn.</p>
+            `;
             resBox.classList.remove('hidden');
         }
 
         function handleContactSubmit(e) {
             e.preventDefault();
-            showToast('Gửi tin nhắn thành công! Đội ngũ Atelier sẽ sớm phản hồi.');
+            showToast('Tin nhắn của bạn đã được gửi thành công!');
             e.target.reset();
         }
 
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').textContent = msg;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast('Cảm ơn bạn đã đăng ký nhận bản tin Atelier!');
+            e.target.reset();
         }
-
-        // --- 9. INITIALIZATION ---
-        window.onload = function() {
-            renderHomeBestsellers();
-            renderShopFilters();
-            updateBadges();
-        };
     </script>
 </body>
 </html>
